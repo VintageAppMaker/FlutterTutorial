@@ -1,7 +1,8 @@
-#### Variable 
+### Variable 
 > 변수의 정의, 대입에 대해 알아본다. 
 
-[전체소스](variable.dart)
+- [전체소스](variable.dart)
+- [dartpad로 실행하기](https://dartpad.dev/d4d1b2d5c17bfcb58a9c7bd602e19364)
 
 1. 기본적으로는 Data형을 선언해야 함(정적선언).
 ~~~dart
