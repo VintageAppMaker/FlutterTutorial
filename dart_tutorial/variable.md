@@ -1,7 +1,7 @@
 #### Variable 
 > 변수의 정의, 대입에 대해 알아본다. 
 
-[전체소스](variable.md)
+[전체소스](variable.dart)
 
 1. 기본적으로는 Data형을 선언해야 함(정적선언).
 ~~~dart
