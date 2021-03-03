@@ -7,7 +7,7 @@ Flutter와 Dart 개발을 위한 가이드
     - [변수-Variable](dart_tutorial/variable.md)
     - [비교문, 반복문, switch, 널체크](dart_tutorial/condition.md)
     - [타입채크, 형변환](dart_tutorial/CastingTypeCheck.md)
-
+    - [함수](dart_tutorial/function.md)
 
 
 - Flutter 배우기
