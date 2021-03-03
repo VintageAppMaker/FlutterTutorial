@@ -17,7 +17,7 @@
 
 3. 함수를 리턴하거나 넘길 때, 데이터형은 Function이다. 
 4. 리턴값이 있는 1줄 함수라면 (파라메터) => {구현}
-5. 클로져는 바깥 함수의 변수를 점근할 수 있는 내부의 익명함수를 말한다. 
+5. 클로져는 바깥 함수의 변수를 접근할 수 있는 내부의 익명함수를 말한다. 
    ~~~dart
    Function fnClosure(Function fn, int baseValue) {
      var nNum = baseValue;
