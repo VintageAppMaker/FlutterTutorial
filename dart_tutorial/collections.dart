@@ -33,4 +33,14 @@ void main() {
   var set2 = {1, 1, 1, 1, 1, 2, 2, 3, 3};
   set2.remove(3);
   print(set2);
+
+  // map
+  var mp = Map();
+  mp["A"] = 1;
+  mp[1] = 1;
+  print(mp);
+
+  var mp2 = {1: "one", 2: "two", "three": 3};
+  mp2.remove(2);
+  print(mp2);
 }
