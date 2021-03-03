@@ -9,7 +9,7 @@ Flutter와 Dart 개발을 위한 가이드
     - [타입채크, 형변환](dart_tutorial/CastingTypeCheck.md)
     - [함수](dart_tutorial/function.md)
     - [Collections](dart_tutorial/collections.md)
-
-
+    - [lambda와 closure](dart_tutorial/lambda_closure.md)
+    
 - Flutter 배우기
 - 기본설정
