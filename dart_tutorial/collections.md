@@ -29,6 +29,7 @@
 
 4. set은 List와 유사하나 item이 중복안됨.
     - vscode에서 경고화면
+    
 ![](images/1.jpg)
 
 
