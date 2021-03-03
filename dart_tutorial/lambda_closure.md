@@ -2,7 +2,7 @@
 > lambda와 closure 사용법 정리
 
 - [전체소스](lambda_closure.dart)
-- [dartpad로 실행하기](https://dartpad.dev/f7b548af4cb6a1bf81484818739e6a40)
+- [dartpad로 실행하기](https://dartpad.dev/a2208065fff51effb05d4fd1d9fb6d2f)
 
 1. lambda는 익명함수이다. 함수의 파라메터로 함수를 넘길 때 많이 사용된다. 
     ~~~
