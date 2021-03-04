@@ -10,6 +10,7 @@ Flutter와 Dart 개발을 위한 가이드
     - [함수](dart_tutorial/function.md)
     - [Collections](dart_tutorial/collections.md)
     - [lambda와 closure](dart_tutorial/lambda_closure.md)
+    - [class](dart_tutorial/class.md)
     
 - Flutter 배우기
 - 기본설정
