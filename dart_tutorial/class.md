@@ -1,10 +1,8 @@
 ### class
-> class 사용법 정리
+> class 사용법 정리. 문법은 기본적으로 java와 유사하다.
 
 - [전체소스](class.dart)
 - [dartpad로 실행하기](https://dartpad.dev/0818893c1a61a76baaf88524c6e78a26)
-
-- 문법은 기본적으로 java와 유사하다.
 
 1. new를 사용할 수도 안할 수도
 2. 이름있는 생성자를 [클래스명.메소드명]으로 사용가능
