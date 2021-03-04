@@ -12,6 +12,7 @@ Flutter와 Dart 개발을 위한 가이드
     - [lambda와 closure](dart_tutorial/lambda_closure.md)
     - [class](dart_tutorial/class.md)
     - [abstract](dart_tutorial/abstract.md)
+    - [mixin, extension](dart_tutorial/mixin_extension.md)
     
 - Flutter 배우기
 - 기본설정
