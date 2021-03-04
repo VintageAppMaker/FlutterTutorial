@@ -1,5 +1,5 @@
 class Test {
-  String name = null;
+  String name = "";
   int _age = 0;
   int get age => _age;
   set age(int n) {
