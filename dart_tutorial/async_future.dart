@@ -1,20 +1,19 @@
-void main(List<String> args) {
-  Future<String> waitAndGo() {
-    return Future.delayed(Duration(seconds: 3), () => '3초 대기');
-  }
+void main(List<String> args) async {
+  await asyncProcess();
+  thenMethodExample();
+}
 
-  Future<void> asyncProcess() async {
-    print('await와 async를 이용한 방법시작');
-    var order = await waitAndGo();
-    print('await의 결과: $order');
-  }
+Future<String> waitAndGo() {
+  return Future.delayed(Duration(seconds: 3), () => '3초 대기');
+}
 
-  void asyncTest() async {
-    await asyncProcess();
-  }
+Future<void> asyncProcess() async {
+  print('await와 async를 이용한 방법시작');
+  var order = await waitAndGo();
+  print('await의 결과: $order');
+}
 
-  asyncTest();
-
+void thenMethodExample() {
   Future<int> compute(Function f) {
     int sum = f();
     return new Future.delayed(new Duration(seconds: 1), () {
