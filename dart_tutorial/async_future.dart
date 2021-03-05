@@ -1,5 +1,11 @@
 void main(List<String> args) async {
+  // 대기함
   await asyncProcess();
+
+  // 대기하지 않음
+  asyncProcess();
+
+  // 핸들러로 처리
   thenMethodExample();
 }
 
