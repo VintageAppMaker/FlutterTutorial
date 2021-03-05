@@ -19,14 +19,15 @@ Future<void> asyncProcess() async {
   print('await의 결과: $order');
 }
 
-void thenMethodExample() {
-  Future<int> compute(Function f) {
-    int sum = f();
-    return new Future.delayed(new Duration(seconds: 1), () {
-      return sum;
-    });
-  }
+// 넘겨진 함수를 실행한 후, 1초 대기하고 값을 반환
+Future<int> compute(Function f) {
+  int sum = f();
+  return new Future.delayed(new Duration(seconds: 1), () {
+    return sum;
+  });
+}
 
+void thenMethodExample() {
   int myCalculate() => 37 + 45;
   compute(() => myCalculate()).then((v) {
     print("계산 후, 1초 대기하며 값을 then()으로 넘김 : sum() is $v");
