@@ -18,4 +18,7 @@ Flutter와 Dart 개발을 위한 가이드
     - [예외, typedef](dart_tutorial/exception_typedef.md)
     
 - Flutter 배우기
+    - [빠르게 시작하기](flutter_tutorial/first.md)
+
+
 - 기본설정
