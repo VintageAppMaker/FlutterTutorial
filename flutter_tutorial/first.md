@@ -53,6 +53,10 @@
         5. 우클릭 -> Run without Debugging 또는 Start Debugging을 선택하여 실행
         ~~~
 
+    - flutter pub get 또는 flutter packages get을 하면 pubspec.yml에 정의된 의존성을 설치. vscode에서는 최초실행시 GUI에서 자동으로 설치할 것인지 물어봄.
+    
+
+
 3. 중요한 폴더 및 파일
     - lib/main.dart는 메인함수가 있는 파일(**여기를 선택하고 실행해야 함**)
     - pubspec.yml은 dependancy와 리소스관련 정보가 저장된 파일(gradle과 같은 역할)
