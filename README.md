@@ -15,6 +15,7 @@ Flutter와 Dart 개발을 위한 가이드
     - [mixin, extension](dart_tutorial/mixin_extension.md)
     - [비동기 - Stream](dart_tutorial/async_stream.md)
     - [비동기 - future](dart_tutorial/async_future.md)
+    - [예외, typedef](dart_tutorial/exception_typedef.md)
     
 - Flutter 배우기
 - 기본설정

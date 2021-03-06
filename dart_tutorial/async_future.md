@@ -9,7 +9,7 @@
   ~~~
   Future.delayed( Duration, FutureOr<T>형 함수)
   ~~~
-2. 반환값은 Future<T>와 같은 제너릭을 사용함
+2. 반환값은 Future<T>
 3. then() 함수에 반환값을 받음. 비동기 방식.
   ~~~dart
     // 넘겨진 함수를 실행한 후, 1초 대기하고 값을 반환
