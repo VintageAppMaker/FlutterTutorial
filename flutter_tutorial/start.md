@@ -100,6 +100,7 @@
       // 화면갱신 
       @override
       Widget build(BuildContext context) {
+        ...
       }
     }  
     ~~~  
