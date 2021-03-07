@@ -3,6 +3,8 @@
 
 - [dartpad로 실행하기](https://dartpad.dev/cd85fc03b922ed6a4437846d9c9c052c)
 
+![](images/start.jpg)
+
 1. 최초 시작소스
 프로젝트 생성하면 lib/main.dart에 main 함수가 존재함. runApp() 함수를 실행하여 시작됨.
 
