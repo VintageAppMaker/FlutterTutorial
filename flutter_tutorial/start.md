@@ -5,8 +5,7 @@
 
 ![](images/start.jpg)
 
-1. 최초 시작소스
-프로젝트 생성하면 lib/main.dart에 main 함수가 존재함. runApp() 함수를 실행하여 시작됨.
+1. 프로젝트 생성하면 lib/main.dart에 main 함수가 존재함. runApp() 함수를 실행하여 시작됨.
 
     - runApp()은 파라메터로 Widget을 받는다. 
     - Widget은 Flutter를 구성하는 모든 것들의 기본단위 클래스
