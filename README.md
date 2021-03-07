@@ -19,6 +19,7 @@ Flutter와 Dart 개발을 위한 가이드
     
 - Flutter 배우기
     - [빠르게 시작하기](flutter_tutorial/first.md)
+    - [빠르게 구조파악](flutter_tutorial/start.md)
 
 
 - 기본설정
