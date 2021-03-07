@@ -8,7 +8,7 @@
 
     - runApp()은 파라메터로 Widget을 받는다. 
     - Widget은 Flutter를 구성하는 모든 것들의 기본단위 클래스
-    - Widget은 Widget을 포함시켜 계층단위(parents, child)를 만든다. => 화면 안의 화면으로 구성
+    - Widget은 Widget을 포함시켜 계층단위(parent, child)를 만든다. => 화면 안의 화면으로 구성
     - 화면이 계층구조이다보니 Widget들의 오른쪽 들여쓰기가 많은 편임(주의필요).
     
     ~~~dart
