@@ -23,6 +23,10 @@ class ButtonExample extends StatelessWidget {
         RaisedButton(
             onPressed: () {/*이벤트 핸들러*/}, child: Text('1. RaisedButton')),
         FlatButton(onPressed: () {/*이벤트 핸들러*/}, child: Text('2. FlatButton')),
+        SizedBox(
+            width: double.infinity, // <-- match_parent
+            child: FlatButton(
+                onPressed: () {/*이벤트 핸들러*/}, child: Text('3. FlatButton')))
       ],
     ));
   }
