@@ -14,7 +14,7 @@ class TextTest extends StatelessWidget{
   }
 
   Widget buildTestBody(){
-    return Column(
+    return Column(  // 세로방향으로 위젯을 추가한다[children]. Android의 LinearLayout
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
