@@ -15,4 +15,4 @@
     Text("Test2", style: TextStyle(color: Colors.blue))
     ~~~
 
-- TextStyle은     
+- TextStyle은 주로 글자크기와 색상을 지정할 때 사용한다.     
