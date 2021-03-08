@@ -1,7 +1,9 @@
 ### Text 위젯 
 > Text 위젯의 사용법 정리
 
-[전체소스](../../lib/basic/TextTest.dart)
+- [전체소스](../../lib/basic/TextTest.dart)
+- [dartpad로 실행하기](https://dartpad.dev/6161485824ca1bdf25d970acc4cf5d4f?null_safety=true)
+
 
 ![](../images/TextTest.jpg)
 
