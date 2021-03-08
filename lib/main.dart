@@ -28,7 +28,6 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,9 +39,15 @@ class _MainPageState extends State<MainPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             RaisedButton(
-              onPressed: (){ Navigator.pushNamed(context, "/TextTest"); }, 
-              child: Text('1. Text 예제') 
-            ),
+                onPressed: () {
+                  Navigator.pushNamed(context, "/TextTest");
+                },
+                child: Text('1. Text 예제')),
+            RaisedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, "/ButtonTest");
+                },
+                child: Text('2. Button 예제')),
           ],
         ),
       ),
