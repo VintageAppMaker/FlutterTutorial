@@ -30,4 +30,4 @@
     ~~~
 
 - 모든 위젯은 자식 위젯이 1개일 때는 child, 여러개일 때는 children이라는 필드를 사용한다. 
-- Fluttertoast를 사용하기 위해서는 플러그인을 포함시켜야한다.
+- Fluttertoast를 사용하기 위해서는 [플러그인](https://pub.dev/packages/fluttertoast)을 포함시켜야한다.
