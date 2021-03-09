@@ -31,26 +31,33 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Flutter Tutorial"),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            RaisedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, "/TextTest");
-                },
-                child: Text('1. Text 예제')),
-            RaisedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, "/ButtonTest");
-                },
-                child: Text('2. Button 예제')),
-          ],
+        appBar: AppBar(
+          title: Text("Flutter Tutorial"),
         ),
+        body: SingleChildScrollView(child: buildCenter(context)));
+  }
+
+  Center buildCenter(BuildContext context) {
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          buildOutlinedButton(context, "/TextExample", "1. Text 예제"),
+          buildOutlinedButton(context, "/ButtonExample", "2. Button 예제"),
+          buildOutlinedButton(context, "/ImageExample", "3. Image 예제")
+        ],
       ),
     );
+  }
+
+  OutlinedButton buildOutlinedButton(
+      BuildContext context, String sDestination, String sTitle) {
+    return OutlinedButton(
+        style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all<Color>(Colors.teal)),
+        onPressed: () {
+          Navigator.pushNamed(context, sDestination);
+        },
+        child: Text(sTitle, style: TextStyle(color: Colors.white)));
   }
 }
