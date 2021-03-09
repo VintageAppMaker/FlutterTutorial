@@ -21,7 +21,8 @@ Flutter와 Dart 개발을 위한 가이드
     - [빠르게 시작하기](flutter_tutorial/first.md)
     - [빠르게 구조파악](flutter_tutorial/start.md)
     - basic
-      - [Text](flutter_tutorial/basic/TextTest.md)
+      - [Text](flutter_tutorial/basic/TextExample.md)
+      - [Button](flutter_tutorial/basic/ButtonExample.md)
 
 
 - 기본설정
