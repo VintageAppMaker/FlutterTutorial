@@ -11,7 +11,7 @@
 - 클릭에 대한 처리는 onPressed 파라메터에 함수를 구현해서 넘김
 - child 파라메터로 Text를 생성하여 버튼에 문자열을 표시함 
 - 버튼의 크기를 조절할 경우, SizedBox 안에 자식위젯(child)으로 생성
-- SizedBox는 위젯의 크기를 조절할 경우 사용함
+- [SizedBox](https://api.flutter.dev/flutter/widgets/SizedBox-class.html)는 위젯의 크기를 조절할 경우 사용함
     ~~~dart
     // Button 예제
     RaisedButton(onPressed: () {/*이벤트 핸들러*/}, child: Text('1. RaisedButton')),
