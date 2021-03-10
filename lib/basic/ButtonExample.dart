@@ -43,7 +43,18 @@ class ButtonExample extends StatelessWidget {
             textColor: Colors.redAccent,
             child: Text("4. Outline Button"),
             onPressed: null,
-            borderSide: BorderSide(width: 0.7, color: Colors.red))
+            borderSide: BorderSide(width: 0.7, color: Colors.red)),
+
+        FloatingActionButton(
+          onPressed: () {},
+          child: Icon(Icons.thumb_up),
+          backgroundColor: Colors.pink,
+        ),
+        IconButton(
+          icon: Icon(Icons.access_alarm),
+          tooltip: 'alarm setting',
+          onPressed: () {},
+        )
       ],
     );
   }

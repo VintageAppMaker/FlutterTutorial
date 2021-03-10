@@ -8,6 +8,7 @@
 ![](../images/ButtonExample.jpg)
 
 - RaisedButton(윤곽이 있는 모양), FlatButton(윤곽이 없는 모양), OutlineButton(바깥쪽 라인있는 모양)
+- FloatingActionButton(떠있는 아이콘모양), IconButton(아이콘 모양)
 - 클릭에 대한 처리는 onPressed 파라메터에 함수를 구현해서 넘김
 - child 파라메터로 Text를 생성하여 버튼에 문자열을 표시함 
 - 버튼의 크기를 조절할 경우, SizedBox 안에 자식위젯(child)으로 생성
@@ -41,7 +42,19 @@
        textColor: Colors.redAccent,
        child: Text("4. Outline Button"),
        onPressed: null,
-       borderSide: BorderSide(width: 0.7, color: Colors.red))
+       borderSide: BorderSide(width: 0.7, color: Colors.red)), 
+
+     FloatingActionButton(
+       onPressed: () {},
+       child: Icon(Icons.thumb_up),
+       backgroundColor: Colors.pink,
+     ),
+     
+     IconButton(
+       icon: Icon(Icons.access_alarm),
+       tooltip: 'alarm setting',
+       onPressed: () {},
+     )  
     ~~~
 
 - 모든 위젯은 자식 위젯이 1개일 때는 child, 여러개일 때는 children이라는 필드를 사용한다. 
