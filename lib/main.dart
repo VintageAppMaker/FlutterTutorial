@@ -44,7 +44,8 @@ class _MainPageState extends State<MainPage> {
         children: <Widget>[
           buildOutlinedButton(context, "/TextExample", "1. Text 예제"),
           buildOutlinedButton(context, "/ButtonExample", "2. Button 예제"),
-          buildOutlinedButton(context, "/ImageExample", "3. Image 예제")
+          buildOutlinedButton(context, "/ImageExample", "3. Image 예제"),
+          buildOutlinedButton(context, "/TextFieldExample", "4. TextField 예제")
         ],
       ),
     );
