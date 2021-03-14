@@ -10,23 +10,23 @@ class FormFieldExample extends StatelessWidget {
             appBar: AppBar(
               title: Text("Test 입니다."),
             ),
-            body: rootWidget()));
+            body: RootWidget()));
   }
 }
 
 // 상태 갱신을 위한 위젯 (StatefulWidget)
-class rootWidget extends StatefulWidget {
+class RootWidget extends StatefulWidget {
   String _title = "Test";
   // Form의 상태관리
   final _formKey = GlobalKey<FormState>();
 
   @override
-  rootWidgetState createState() {
-    return rootWidgetState();
+  RootWidgetState createState() {
+    return RootWidgetState();
   }
 }
 
-class rootWidgetState extends State<rootWidget> {
+class RootWidgetState extends State<RootWidget> {
   @override
   Widget build(BuildContext context) {
     return buildTestBody();

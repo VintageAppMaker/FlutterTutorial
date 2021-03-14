@@ -33,7 +33,7 @@ class RootWidgetState extends State<RootWidget> {
   // TextField의 컨트롤러 선언
   final editController = TextEditingController();
 
-  //
+  // 화면출력
   void setDisplay(String s) {
     setState(() {
       _display = s;
