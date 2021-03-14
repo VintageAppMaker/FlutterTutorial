@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'basic/TextExample.dart';
 import 'basic/ButtonExample.dart';
 import 'basic/ImageExample.dart';
+import 'basic/FormFieldExample.dart';
 import 'basic/TextFieldExample.dart';
 
 import 'main.dart';
@@ -14,5 +15,6 @@ final routes = {
   '/TextExample': (BuildContext context) => TextExample(),
   '/ButtonExample': (BuildContext context) => ButtonExample(),
   '/ImageExample': (BuildContext context) => ImageExample(),
-  '/TextFieldExample': (BuildContext context) => TextFieldExample()
+  '/TextFieldExample': (BuildContext context) => TextFieldExample(),
+  '/FormFieldExample': (BuildContext context) => FormFieldExample()
 };
