@@ -5,7 +5,7 @@ class TextFieldExample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: "2. Button 사용법",
+        title: "4. TextField 사용법",
         home: Scaffold(
             appBar: AppBar(
               title: Text("Test 입니다."),

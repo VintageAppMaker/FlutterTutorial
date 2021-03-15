@@ -5,6 +5,7 @@ import 'basic/ButtonExample.dart';
 import 'basic/ImageExample.dart';
 import 'basic/FormFieldExample.dart';
 import 'basic/TextFieldExample.dart';
+import 'basic/LayoutExample.dart';
 
 import 'main.dart';
 
@@ -16,5 +17,6 @@ final routes = {
   '/ButtonExample': (BuildContext context) => ButtonExample(),
   '/ImageExample': (BuildContext context) => ImageExample(),
   '/TextFieldExample': (BuildContext context) => TextFieldExample(),
-  '/FormFieldExample': (BuildContext context) => FormFieldExample()
+  '/FormFieldExample': (BuildContext context) => FormFieldExample(),
+  '/LayoutExample': (BuildContext context) => LayoutExample()
 };
