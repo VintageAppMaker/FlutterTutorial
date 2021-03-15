@@ -31,13 +31,11 @@ class LayoutExample extends StatelessWidget {
     return SizedBox(
       width : 100, 
       height : 100, 
-      child : Center(
-        child: Container(
+      child: Container(
           width: double.infinity, 
           color: Colors.orange, 
           child: Text("Sized", textAlign: TextAlign.center, style: TextStyle(fontSize: 30, color: Colors.indigo),)
         )
-      )
     );
   }
 
@@ -50,12 +48,10 @@ class LayoutExample extends StatelessWidget {
       );
   }
 
-  Center buildCenterRow() {
-    return Center( child: 
-        Container(color: Colors.cyan, width: double.infinity, margin: EdgeInsets.all(6), 
+  Widget buildCenterRow() {
+    return Container(color: Colors.cyan, width: double.infinity, margin: EdgeInsets.all(6), 
           child: Row( 
             children: [ for(int i =0; i< 10; i++) Text("$i") ],
-        )),
-      );
+        ));
   }
 }
