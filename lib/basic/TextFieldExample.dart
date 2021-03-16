@@ -4,11 +4,12 @@ import 'package:flutter/material.dart';
 class TextFieldExample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    String sTitle = "4. TextField 사용법";
     return MaterialApp(
-        title: "4. TextField 사용법",
+        title: sTitle,
         home: Scaffold(
             appBar: AppBar(
-              title: Text("Test 입니다."),
+              title: Text(sTitle),
             ),
             body: RootWidget()));
   }

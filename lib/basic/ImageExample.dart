@@ -4,11 +4,12 @@ import 'package:flutter/material.dart';
 class ImageExample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    String sTitle = "3. Image 사용법";
     return MaterialApp(
-        title: "3. Image 사용법",
+        title: sTitle,
         home: Scaffold(
             appBar: AppBar(
-              title: Text("Test 입니다."),
+              title: Text(sTitle),
             ),
             body: buildTestBody()));
   }

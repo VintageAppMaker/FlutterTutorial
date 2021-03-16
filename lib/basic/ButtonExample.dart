@@ -5,11 +5,12 @@ import 'package:fluttertoast/fluttertoast.dart';
 class ButtonExample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    String sTitle = "2. Button 사용법";
     return MaterialApp(
-        title: "2. Button 사용법",
+        title: sTitle,
         home: Scaffold(
             appBar: AppBar(
-              title: Text("Test 입니다."),
+              title: Text(sTitle),
             ),
             body: buildTestBody()));
   }
