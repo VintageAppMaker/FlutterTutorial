@@ -15,15 +15,30 @@ class TextExample extends StatelessWidget {
   }
 
   Widget buildTestBody() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+    return Center(
+        child: Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
         // Text 예제
         Text("Test"),
         Text("Test2", style: TextStyle(fontSize: 20)),
-        Text("Test2", style: TextStyle(color: Colors.blue)),
+        Text("Test3", style: TextStyle(color: Colors.blue)),
+
+        // 크기지정은 다른 Widget에서 설정해야 한다.
+        Container(
+            width: 200,
+            child: Text(
+                "Test4Test4Test4Test4Test4Test4Test4Test4Test4Test4Test4Test4Test4",
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(color: Colors.red))),
+
+        Container(
+            width: double.infinity,
+            child: Text("Test5",
+                textAlign: TextAlign.end,
+                style: TextStyle(color: Colors.black)))
       ],
-    );
+    ));
   }
 }

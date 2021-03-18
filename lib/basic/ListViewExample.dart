@@ -5,7 +5,7 @@ class ListViewExample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     String sTitle = "7. ListView 사용법";
-    var lst = List<String>.generate(100, (index) => "$index ");
+    var lst = List<String>.generate(101, (index) => "$index ");
     return MaterialApp(
         title: sTitle,
         home: Scaffold(
@@ -18,18 +18,29 @@ class ListViewExample extends StatelessWidget {
   Widget buildTestBody(List<String> lst) {
     return Column(
       children: [
-        Text("주의", style: TextStyle(fontSize: 30)),
-        Text("Colimn내 사용시 Expanded 안에 ListView를 추가",
+        Text("Header", style: TextStyle(fontSize: 30)),
+        Text("Column내 사용시 Expanded 안에 ListView를 추가",
             style: TextStyle(color: Colors.red, fontSize: 10)),
         Divider(),
-        Expanded(child: ListView.builder(itemBuilder: (context, index) {
-          return GestureDetector(
-            child: buildListItem(lst, index),
-            onTap: () {
-              showSnackBar(context, "${lst[index]}을 선택했습니다.");
-            },
-          );
-        }))
+        Expanded(
+            child: ListView.separated(
+                //ListView.builder를 사용하면 세퍼레이터(구분선)를 설정하지 않아도된다.
+                itemCount: lst.length,
+                separatorBuilder: (context, index) {
+                  // 항목에 따라 안보여줄 수도 있다.
+                  if (index == 0) return SizedBox.shrink();
+                  return const Divider();
+                },
+                itemBuilder: (context, index) {
+                  return GestureDetector(
+                    child: buildListItem(lst, index),
+                    onTap: () {
+                      showSnackBar(context, "${lst[index]}을 선택했습니다.");
+                    },
+                  );
+                })),
+        Divider(),
+        Text("Footer", style: TextStyle(fontSize: 30)),
       ],
     );
   }
