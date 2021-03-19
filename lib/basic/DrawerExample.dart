@@ -1,13 +1,21 @@
 import 'package:flutter/material.dart';
 
-class DrawerExample extends StatelessWidget {
+class DrawerExample extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return _DrawerState();
+  }
+}
+
+class _DrawerState extends State<DrawerExample> {
   final String sTitle = "10. Drawer 사용법";
+  int pageSelected = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text(sTitle)),
       body: buildMainPage(),
-      // 드로워(서랍) 추가
       drawer: buildDrawer(context),
     );
   }
@@ -44,13 +52,19 @@ class DrawerExample extends StatelessWidget {
             leading: Icon(Icons.ac_unit),
             title: Text('홈'),
             onTap: () {
+              setState(() {
+                pageSelected = 0;
+              });
               Navigator.pop(context);
             },
           ),
           Divider(),
           ListTile(
-            title: Text('상세화면'),
+            title: Text('Google'),
             onTap: () {
+              setState(() {
+                pageSelected = 1;
+              });
               Navigator.pop(context);
             },
           )
@@ -59,5 +73,21 @@ class DrawerExample extends StatelessWidget {
     );
   }
 
-  Center buildMainPage() => Center(child: Text('My Page!'));
+  // Drawer 선택시 화면을 만든다.
+  Center buildMainPage() {
+    var page = Center(child: Text(""));
+    switch (pageSelected) {
+      case 0:
+        page = Center(child: Text("Home 화면"));
+        break;
+      case 1:
+        page = Center(
+            child: Image.network(
+                "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"));
+        break;
+      default:
+    }
+
+    return page;
+  }
 }
