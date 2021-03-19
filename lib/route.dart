@@ -9,6 +9,7 @@ import 'basic/LayoutExample.dart';
 import 'basic/ListViewExample.dart';
 import 'basic/TabExample.dart';
 import 'basic/TabExample2.dart';
+import 'basic/DrawerExample.dart';
 
 import 'main.dart';
 
@@ -24,5 +25,6 @@ final routes = {
   '/LayoutExample': (BuildContext context) => LayoutExample(),
   '/ListViewExample': (BuildContext context) => ListViewExample(),
   '/TabViewExample': (BuildContext context) => TabExample(),
-  '/TabViewExample2': (BuildContext context) => TabExample2()
+  '/TabViewExample2': (BuildContext context) => TabExample2(),
+  '/DrawerExample': (BuildContext context) => DrawerExample()
 };

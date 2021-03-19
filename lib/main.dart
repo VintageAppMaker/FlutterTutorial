@@ -42,30 +42,32 @@ class _MainPageState extends State<MainPage> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          buildOutlinedButton(
+          buildContentItem(
               context, "/TextExample", "1. Text 예제", "Text 사용법을 정리합니다."),
-          buildOutlinedButton(
+          buildContentItem(
               context, "/ButtonExample", "2. Button 예제", "Button 사용법을 정리합니다."),
-          buildOutlinedButton(
+          buildContentItem(
               context, "/ImageExample", "3. Image 예제", "Image 사용법을 정리합니다."),
-          buildOutlinedButton(context, "/TextFieldExample", "4. TextField 예제",
+          buildContentItem(context, "/TextFieldExample", "4. TextField 예제",
               "TextField 사용법을 정리합니다."),
-          buildOutlinedButton(context, "/FormFieldExample", "5. FormField 예제",
+          buildContentItem(context, "/FormFieldExample", "5. FormField 예제",
               "FormField 사용법을 정리합니다."),
-          buildOutlinedButton(
+          buildContentItem(
               context, "/LayoutExample", "6. Layout 예제", "Layout 사용법을 정리합니다."),
-          buildOutlinedButton(context, "/ListViewExample", "7. ListView 예제",
+          buildContentItem(context, "/ListViewExample", "7. ListView 예제",
               "ListView 사용법을 정리합니다."),
-          buildOutlinedButton(
+          buildContentItem(
               context, "/TabViewExample", "8. Tab 예제", "Tab 사용법을 정리합니다(기본)."),
-          buildOutlinedButton(context, "/TabViewExample2", "9. Tab 예제2",
-              "Tab 사용법을 정리합니다(Builder 이용).")
+          buildContentItem(context, "/TabViewExample2", "9. Tab 예제2",
+              "Tab 사용법을 정리합니다(Builder 이용)."),
+          buildContentItem(
+              context, "/DrawerExample", "10. Drawer 예제", "Drawer 사용법을 정리합니다.")
         ],
       ),
     );
   }
 
-  Widget buildOutlinedButton(
+  Widget buildContentItem(
       BuildContext context, String sDestination, String sTitle, String sDesc) {
     return Column(
       children: [
