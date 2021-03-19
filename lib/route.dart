@@ -7,6 +7,8 @@ import 'basic/FormFieldExample.dart';
 import 'basic/TextFieldExample.dart';
 import 'basic/LayoutExample.dart';
 import 'basic/ListViewExample.dart';
+import 'basic/TabExample.dart';
+import 'basic/TabExample2.dart';
 
 import 'main.dart';
 
@@ -20,5 +22,7 @@ final routes = {
   '/TextFieldExample': (BuildContext context) => TextFieldExample(),
   '/FormFieldExample': (BuildContext context) => FormFieldExample(),
   '/LayoutExample': (BuildContext context) => LayoutExample(),
-  '/ListViewExample': (BuildContext context) => ListViewExample()
+  '/ListViewExample': (BuildContext context) => ListViewExample(),
+  '/TabViewExample': (BuildContext context) => TabExample(),
+  '/TabViewExample2': (BuildContext context) => TabExample2()
 };

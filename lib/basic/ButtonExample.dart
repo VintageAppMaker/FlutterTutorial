@@ -12,7 +12,15 @@ class ButtonExample extends StatelessWidget {
             appBar: AppBar(
               title: Text(sTitle),
             ),
-            body: buildTestBody()));
+            body: buildTestBody(),
+            floatingActionButtonLocation:
+                FloatingActionButtonLocation.centerDocked,
+            floatingActionButton: FloatingActionButton(
+              // isExtended: true,
+              child: Icon(Icons.add),
+              backgroundColor: Colors.green,
+              onPressed: () {},
+            )));
   }
 
   Widget buildTestBody() {
@@ -50,6 +58,16 @@ class ButtonExample extends StatelessWidget {
           onPressed: () {},
           child: Icon(Icons.thumb_up),
           backgroundColor: Colors.pink,
+        ),
+
+        FloatingActionButton.extended(
+          backgroundColor: const Color(0xffFFFF06),
+          foregroundColor: Colors.black,
+          onPressed: () {
+            // Respond to button press
+          },
+          icon: Icon(Icons.access_alarms),
+          label: Text('알람설정'),
         ),
         IconButton(
           icon: Icon(Icons.access_alarm),

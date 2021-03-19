@@ -42,26 +42,43 @@ class _MainPageState extends State<MainPage> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          buildOutlinedButton(context, "/TextExample", "1. Text 예제"),
-          buildOutlinedButton(context, "/ButtonExample", "2. Button 예제"),
-          buildOutlinedButton(context, "/ImageExample", "3. Image 예제"),
-          buildOutlinedButton(context, "/TextFieldExample", "4. TextField 예제"),
-          buildOutlinedButton(context, "/FormFieldExample", "5. FormField 예제"),
-          buildOutlinedButton(context, "/LayoutExample", "6. Layout 예제"),
-          buildOutlinedButton(context, "/ListViewExample", "7. ListView 예제")
+          buildOutlinedButton(
+              context, "/TextExample", "1. Text 예제", "Text 사용법을 정리합니다."),
+          buildOutlinedButton(
+              context, "/ButtonExample", "2. Button 예제", "Button 사용법을 정리합니다."),
+          buildOutlinedButton(
+              context, "/ImageExample", "3. Image 예제", "Image 사용법을 정리합니다."),
+          buildOutlinedButton(context, "/TextFieldExample", "4. TextField 예제",
+              "TextField 사용법을 정리합니다."),
+          buildOutlinedButton(context, "/FormFieldExample", "5. FormField 예제",
+              "FormField 사용법을 정리합니다."),
+          buildOutlinedButton(
+              context, "/LayoutExample", "6. Layout 예제", "Layout 사용법을 정리합니다."),
+          buildOutlinedButton(context, "/ListViewExample", "7. ListView 예제",
+              "ListView 사용법을 정리합니다."),
+          buildOutlinedButton(
+              context, "/TabViewExample", "8. Tab 예제", "Tab 사용법을 정리합니다(기본)."),
+          buildOutlinedButton(context, "/TabViewExample2", "9. Tab 예제2",
+              "Tab 사용법을 정리합니다(Builder 이용).")
         ],
       ),
     );
   }
 
-  OutlinedButton buildOutlinedButton(
-      BuildContext context, String sDestination, String sTitle) {
-    return OutlinedButton(
-        style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.all<Color>(Colors.teal)),
-        onPressed: () {
-          Navigator.pushNamed(context, sDestination);
-        },
-        child: Text(sTitle, style: TextStyle(color: Colors.white)));
+  Widget buildOutlinedButton(
+      BuildContext context, String sDestination, String sTitle, String sDesc) {
+    return GestureDetector(
+      child: ListTile(
+        title: Text(sTitle),
+        subtitle: Text(
+          sDesc,
+          style: TextStyle(fontSize: 10),
+        ),
+        trailing: Icon(Icons.add_box),
+      ),
+      onTap: () {
+        Navigator.pushNamed(context, sDestination);
+      },
+    );
   }
 }
