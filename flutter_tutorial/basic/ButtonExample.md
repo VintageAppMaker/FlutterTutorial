@@ -49,6 +49,12 @@
        child: Icon(Icons.thumb_up),
        backgroundColor: Colors.pink,
      ),
+
+     FloatingActionButton(
+       onPressed: () {},
+       child: Icon(Icons.thumb_up),
+       backgroundColor: Colors.pink,
+     ),
      
      IconButton(
        icon: Icon(Icons.access_alarm),
@@ -58,4 +64,6 @@
     ~~~
 
 - 모든 위젯은 자식 위젯이 1개일 때는 child, 여러개일 때는 children이라는 필드를 사용한다. 
+- FloatingActionButton은 화면에 여러개 사용할 경우, 설정값에 따라 가끔 알 수 없는 에러가 발생함. 
 - Fluttertoast를 사용하기 위해서는 [플러그인](https://pub.dev/packages/fluttertoast)을 포함시켜야한다.
+

@@ -12,15 +12,7 @@ class ButtonExample extends StatelessWidget {
             appBar: AppBar(
               title: Text(sTitle),
             ),
-            body: buildTestBody(),
-            floatingActionButtonLocation:
-                FloatingActionButtonLocation.centerDocked,
-            floatingActionButton: FloatingActionButton(
-              // isExtended: true,
-              child: Icon(Icons.add),
-              backgroundColor: Colors.green,
-              onPressed: () {},
-            )));
+            body: buildTestBody()));
   }
 
   Widget buildTestBody() {
@@ -53,12 +45,6 @@ class ButtonExample extends StatelessWidget {
             child: Text("4. Outline Button"),
             onPressed: null,
             borderSide: BorderSide(width: 0.7, color: Colors.red)),
-
-        FloatingActionButton(
-          onPressed: () {},
-          child: Icon(Icons.thumb_up),
-          backgroundColor: Colors.pink,
-        ),
 
         FloatingActionButton.extended(
           backgroundColor: const Color(0xffFFFF06),
