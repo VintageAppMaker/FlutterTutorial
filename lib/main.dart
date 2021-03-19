@@ -67,18 +67,23 @@ class _MainPageState extends State<MainPage> {
 
   Widget buildOutlinedButton(
       BuildContext context, String sDestination, String sTitle, String sDesc) {
-    return GestureDetector(
-      child: ListTile(
-        title: Text(sTitle),
-        subtitle: Text(
-          sDesc,
-          style: TextStyle(fontSize: 10),
+    return Column(
+      children: [
+        GestureDetector(
+          child: ListTile(
+            title: Text(sTitle),
+            subtitle: Text(
+              sDesc,
+              style: TextStyle(fontSize: 10),
+            ),
+            trailing: Icon(Icons.arrow_right),
+          ),
+          onTap: () {
+            Navigator.pushNamed(context, sDestination);
+          },
         ),
-        trailing: Icon(Icons.add_box),
-      ),
-      onTap: () {
-        Navigator.pushNamed(context, sDestination);
-      },
+        Divider()
+      ],
     );
   }
 }
