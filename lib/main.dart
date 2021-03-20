@@ -61,7 +61,14 @@ class _MainPageState extends State<MainPage> {
           buildContentItem(context, "/TabViewExample2", "9. Tab 예제2",
               "Tab 사용법을 정리합니다(Builder 이용)."),
           buildContentItem(
-              context, "/DrawerExample", "10. Drawer 예제", "Drawer 사용법을 정리합니다.")
+              context, "/DrawerExample", "10. Drawer 예제", "Drawer 사용법을 정리합니다."),
+          buildContentItem(context, "/RadioDropDownExample",
+              "11. Radio & DropDown 예제", "Radio & DropDown 사용법을 정리합니다."),
+          buildContentItem(
+              context,
+              "/CheckIndicatorExample",
+              "12. Checked, ProgressIndicator 예제",
+              "Checked, PriogressIndicator 사용법을 정리합니다.")
         ],
       ),
     );
