@@ -37,19 +37,22 @@ class LayoutExample extends StatelessWidget {
         children: <Widget>[
           Container(
             width: 130,
-            height: 30,
+            height: 130,
             color: Colors.blue,
           ), //Container
-          Container(
-            width: 125,
-            height: 25,
-            color: Colors.orange,
-          ), //Container
-          Container(
-            height: 20,
-            width: 120,
-            color: Colors.amber,
-          ), //Container
+          // 위치지정
+          Positioned(
+              top: 40,
+              left: 10,
+              child: Container(
+                height: 20,
+                width: 120,
+                color: Colors.amber,
+              )), //Container
+          Positioned.fill(
+              top: -100, left: -10, child: Icon(Icons.access_alarm)),
+          Positioned.fill(
+              top: 70, left: 60, child: FittedBox(child: FlutterLogo()))
         ], //<Widget>[]
       ), //Stack
     );

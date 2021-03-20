@@ -12,6 +12,7 @@ import 'basic/TabExample2.dart';
 import 'basic/DrawerExample.dart';
 import 'basic/RadioDropdownExample.dart';
 import 'basic/CheckIndicatorExample.dart';
+import 'basic/DialogSnackBarExample.dart';
 
 import 'main.dart';
 
@@ -30,5 +31,6 @@ final routes = {
   '/TabViewExample2': (BuildContext context) => TabExample2(),
   '/DrawerExample': (BuildContext context) => DrawerExample(),
   '/RadioDropDownExample': (BuildContext context) => RadioDropDownExample(),
-  '/CheckIndicatorExample': (BuildContext context) => CheckIndicatorExample()
+  '/CheckIndicatorExample': (BuildContext context) => CheckIndicatorExample(),
+  '/DialogSnackBarExample': (BuildContext context) => DialogSnackBarExample()
 };

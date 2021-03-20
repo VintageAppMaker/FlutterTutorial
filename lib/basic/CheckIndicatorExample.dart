@@ -49,6 +49,12 @@ class _CheckIndicatorState extends State<CheckIndicatorExample> {
               Text("check2")
             ],
           ),
+
+          // 간격 띄우기
+          SizedBox(
+            height: 30,
+          ),
+
           Container(
             width: 300,
             height: 10,
@@ -56,9 +62,15 @@ class _CheckIndicatorState extends State<CheckIndicatorExample> {
               value: 0.5,
             ),
           ),
-          Container(
-            width: 30,
+
+          // 간격 띄우기
+          SizedBox(
             height: 30,
+          ),
+
+          Container(
+            width: 130,
+            height: 130,
             child: CircularProgressIndicator(
               value: 0.9,
             ),
