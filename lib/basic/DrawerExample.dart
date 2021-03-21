@@ -13,11 +13,11 @@ class _DrawerState extends State<DrawerExample> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp( title : sTitle, home: Scaffold(
+    return Scaffold(
       appBar: AppBar(title: Text(sTitle)),
       body: buildMainPage(),
       drawer: buildDrawer(context),
-    ));
+    );
   }
 
   Drawer buildDrawer(BuildContext context) {
