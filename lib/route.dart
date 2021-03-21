@@ -13,6 +13,7 @@ import 'basic/DrawerExample.dart';
 import 'basic/RadioDropdownExample.dart';
 import 'basic/CheckIndicatorExample.dart';
 import 'basic/DialogSnackBarExample.dart';
+import 'basic/CupertinoExample.dart';
 
 import 'main.dart';
 
@@ -32,5 +33,6 @@ final routes = {
   '/DrawerExample': (BuildContext context) => DrawerExample(),
   '/RadioDropDownExample': (BuildContext context) => RadioDropDownExample(),
   '/CheckIndicatorExample': (BuildContext context) => CheckIndicatorExample(),
-  '/DialogSnackBarExample': (BuildContext context) => DialogSnackBarExample()
+  '/DialogSnackBarExample': (BuildContext context) => DialogSnackBarExample(),
+  '/CupertinoExample': (BuildContext context) => CupertinoExample()
 };

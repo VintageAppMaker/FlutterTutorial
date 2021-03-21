@@ -70,7 +70,9 @@ class _MainPageState extends State<MainPage> {
               "12. Checked, ProgressIndicator 예제",
               "Checked, PriogressIndicator 사용법을 정리합니다."),
           buildContentItem(context, "/DialogSnackBarExample",
-              "13. Dialog, SnackBar 예제", "Dialog, SnackBar 사용법을 정리합니다.")
+              "13. Dialog, SnackBar 예제", "Dialog, SnackBar 사용법을 정리합니다."),
+          buildContentItem(context, "/CupertinoExample", "14. Cupertino 예제",
+              "Cupertino 사용법을 정리합니다.")
         ],
       ),
     );
