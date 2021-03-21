@@ -11,12 +11,18 @@ class _DrawerState extends State<DrawerExample> {
   final String sTitle = "10. Drawer 사용법";
   int pageSelected = 0;
 
+  GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text(sTitle)),
-      body: buildMainPage(),
-      drawer: buildDrawer(context),
+    return MaterialApp(
+      title: sTitle,
+      home: Scaffold(
+        key: _scaffoldKey,
+        appBar: AppBar(title: Text(sTitle)),
+        body: buildMainPage(),
+        drawer: buildDrawer(context),
+      ),
     );
   }
 
@@ -55,7 +61,12 @@ class _DrawerState extends State<DrawerExample> {
               setState(() {
                 pageSelected = 0;
               });
-              Navigator.pop(context);
+
+              if (_scaffoldKey.currentState.isDrawerOpen) {
+                _scaffoldKey.currentState.openEndDrawer();
+              } else {
+                _scaffoldKey.currentState.openDrawer();
+              }
             },
           ),
           Divider(),
@@ -65,7 +76,11 @@ class _DrawerState extends State<DrawerExample> {
               setState(() {
                 pageSelected = 1;
               });
-              Navigator.pop(context);
+              if (_scaffoldKey.currentState.isDrawerOpen) {
+                _scaffoldKey.currentState.openEndDrawer();
+              } else {
+                _scaffoldKey.currentState.openDrawer();
+              }
             },
           )
         ],
