@@ -72,7 +72,9 @@ class _MainPageState extends State<MainPage> {
           buildContentItem(context, "/DialogSnackBarExample",
               "13. Dialog, SnackBar 예제", "Dialog, SnackBar 사용법을 정리합니다."),
           buildContentItem(context, "/CupertinoExample", "14. Cupertino 예제",
-              "Cupertino 사용법을 정리합니다.")
+              "Cupertino 사용법을 정리합니다."),
+          buildContentItem(context, "/SourceViewer", "Test",
+              "....")    
         ],
       ),
     );
