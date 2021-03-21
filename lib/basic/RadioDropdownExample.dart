@@ -34,7 +34,10 @@ class _RadioDropDownState extends State<RadioDropDownExample> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: Text(sTitle)), body: buildPage());
+    return MaterialApp(
+        title: sTitle,
+        home: Scaffold(appBar: AppBar(title: Text(sTitle)), body: buildPage())); 
+    
   }
 
   Widget buildPage() {

@@ -56,7 +56,10 @@ class _CupertinoState extends State<CupertinoExample> {
                     _lights = value;
                   });
                 },
-              )
+              ), 
+              SizedBox(
+                height: 10,
+              ),
             ],
           ),
         ));
@@ -69,4 +72,5 @@ class _CupertinoState extends State<CupertinoExample> {
     }
     return sMessage;
   }
+
 }
