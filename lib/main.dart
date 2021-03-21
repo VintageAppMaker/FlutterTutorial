@@ -1,5 +1,6 @@
 import 'package:FlutterTutorial/route.dart';
 import 'package:flutter/material.dart';
+import "io/FileIOExample.dart";
 
 void main() {
   runApp(MyApp());
@@ -73,8 +74,9 @@ class _MainPageState extends State<MainPage> {
               "13. Dialog, SnackBar 예제", "Dialog, SnackBar 사용법을 정리합니다."),
           buildContentItem(context, "/CupertinoExample", "14. Cupertino 예제",
               "Cupertino 사용법을 정리합니다."),
-          buildContentItem(context, "/SourceViewer", "Test",
-              "....")    
+          buildContentItem(context, "/SourceViewer", "Test", "...."),
+          buildContentItem2(context, FileIOExample(storage: FileHelper()),
+              "15. File I/O 예제", "File Read/Write를 정리합니다.")
         ],
       ),
     );
@@ -95,6 +97,33 @@ class _MainPageState extends State<MainPage> {
           ),
           onTap: () {
             Navigator.pushNamed(context, sDestination);
+          },
+        ),
+        Divider()
+      ],
+    );
+  }
+
+  // Material 위젯에서 직접 이동
+  Widget buildContentItem2(
+      BuildContext context, Widget sDestination, String sTitle, String sDesc) {
+    return Column(
+      children: [
+        GestureDetector(
+          child: ListTile(
+            title: Text(sTitle),
+            subtitle: Text(
+              sDesc,
+              style: TextStyle(fontSize: 10),
+            ),
+            trailing: Icon(Icons.arrow_right),
+          ),
+          onTap: () {
+            Navigator.push(
+              context,
+              // Navigator.pop(context)으로 back
+              MaterialPageRoute(builder: (context) => sDestination),
+            );
           },
         ),
         Divider()

@@ -11,7 +11,7 @@ class _DrawerState extends State<DrawerExample> {
   final String sTitle = "10. Drawer 사용법";
   int pageSelected = 0;
 
-  GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+  GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
