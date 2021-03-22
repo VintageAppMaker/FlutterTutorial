@@ -2,19 +2,22 @@ import 'package:FlutterTutorial/route.dart';
 import 'package:flutter/material.dart';
 import "io/FileIOExample.dart";
 import "io/PrefExample.dart";
+import 'package:flutter/services.dart';
 
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setEnabledSystemUIOverlays([]);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.amber,
+        primarySwatch: Colors.red,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       routes: routes,
@@ -34,9 +37,6 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text("Flutter Tutorial"),
-        ),
         body: SingleChildScrollView(child: buildCenter(context)));
   }
 
@@ -145,7 +145,7 @@ class _MainPageState extends State<MainPage> {
       color: Colors.red,
       child: Container(
         width: double.infinity,
-        color: Colors.amber,
+        color: Colors.red,
         child: Padding(
           padding: EdgeInsets.fromLTRB(10, 20, 10, 10),
           child: Column(
@@ -156,6 +156,7 @@ class _MainPageState extends State<MainPage> {
               Text(
                 sTitle,
                 style: TextStyle(
+                    color: Color.fromRGBO(0xFF, 0xFF, 0xFF, 1),
                     fontSize: 24, fontWeight: FontWeight.bold), //TextStyle
               ),
               SizedBox(
@@ -164,7 +165,7 @@ class _MainPageState extends State<MainPage> {
               Text(
                 sSubTitle,
                 style: TextStyle(
-                    color: Color.fromRGBO(0x33, 0x33, 0x33, 0.8),
+                    color: Color.fromRGBO(0xF3, 0xF3, 0xF3, 0.8),
                     fontSize: 12,
                     fontWeight: FontWeight.bold), //TextStyle
               ), //Text
