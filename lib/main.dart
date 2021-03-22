@@ -78,9 +78,8 @@ class _MainPageState extends State<MainPage> {
               "13. Dialog, SnackBar 예제", "Dialog, SnackBar 사용법을 정리합니다."),
           buildContentItem(context, "/CupertinoExample", "14. Cupertino 예제",
               "Cupertino 사용법을 정리합니다."),
-          //buildContentItem(context, "/SourceViewer", "Test", "...."),
           buildHeaderBanner(
-              "Utility", "2. File, Pref, network", "파일관리 및 네트워크 예제"),
+              "Utility", "2. File, Pref, Network", "파일관리 및 네트워크 예제"),
           buildContentItem2(context, FileIOExample(storage: FileHelper()),
               "15. File I/O 예제", "File Read/Write를 정리합니다."),
           buildContentItem2(
