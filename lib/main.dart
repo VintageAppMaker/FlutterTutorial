@@ -1,6 +1,7 @@
 import 'package:FlutterTutorial/route.dart';
 import 'package:flutter/material.dart';
 import "io/FileIOExample.dart";
+import "io/PrefExample.dart";
 
 void main() {
   runApp(MyApp());
@@ -10,9 +11,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.red,
+        primarySwatch: Colors.amber,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       routes: routes,
@@ -43,6 +45,7 @@ class _MainPageState extends State<MainPage> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
+          buildHeaderBanner("basic", "1. 기본위젯", "빈번하게 사용되는 위젯과 기초지식"),
           buildContentItem(
               context, "/TextExample", "1. Text 예제", "Text 사용법을 정리합니다."),
           buildContentItem(
@@ -69,14 +72,18 @@ class _MainPageState extends State<MainPage> {
               context,
               "/CheckIndicatorExample",
               "12. Checked, ProgressIndicator 예제",
-              "Checked, PriogressIndicator 사용법을 정리합니다."),
+              "Checked, ProgressIndicator 사용법을 정리합니다."),
           buildContentItem(context, "/DialogSnackBarExample",
               "13. Dialog, SnackBar 예제", "Dialog, SnackBar 사용법을 정리합니다."),
           buildContentItem(context, "/CupertinoExample", "14. Cupertino 예제",
               "Cupertino 사용법을 정리합니다."),
-          buildContentItem(context, "/SourceViewer", "Test", "...."),
+          //buildContentItem(context, "/SourceViewer", "Test", "...."),
+          buildHeaderBanner(
+              "Utility", "2. File, Pref, network", "파일관리 및 네트워크 예제"),
           buildContentItem2(context, FileIOExample(storage: FileHelper()),
-              "15. File I/O 예제", "File Read/Write를 정리합니다.")
+              "15. File I/O 예제", "File Read/Write를 정리합니다."),
+          buildContentItem2(
+              context, PrefExample(), "16. Preference 예제", "Preference를 정리합니다.")
         ],
       ),
     );
@@ -128,6 +135,44 @@ class _MainPageState extends State<MainPage> {
         ),
         Divider()
       ],
+    );
+  }
+
+  Widget buildHeaderBanner(String sBanner, String sTitle, String sSubTitle) {
+    return Banner(
+      message: sBanner,
+      location: BannerLocation.bottomStart,
+      color: Colors.red,
+      child: Container(
+        width: double.infinity,
+        color: Colors.amber,
+        child: Padding(
+          padding: EdgeInsets.fromLTRB(10, 20, 10, 10),
+          child: Column(
+            children: <Widget>[
+              SizedBox(
+                height: 10,
+              ), //SizedBox
+              Text(
+                sTitle,
+                style: TextStyle(
+                    fontSize: 24, fontWeight: FontWeight.bold), //TextStyle
+              ),
+              SizedBox(
+                height: 5,
+              ), //SizedBox
+              Text(
+                sSubTitle,
+                style: TextStyle(
+                    color: Color.fromRGBO(0x33, 0x33, 0x33, 0.8),
+                    fontSize: 12,
+                    fontWeight: FontWeight.bold), //TextStyle
+              ), //Text
+              SizedBox(height: 10),
+            ], //<Widget>[]
+          ), //Column
+        ), //Padding
+      ), //Container
     );
   }
 }
