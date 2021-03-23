@@ -5,10 +5,10 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-// yaml 파일에 http를 추가하면 에러가 발생함. 
+// yaml 파일에 http를 추가하면 에러가 발생함.
 Future<List<Photo>> fetchPhotos(http.Client client) async {
   final response =
-  await client.get('https://jsonplaceholder.typicode.com/photos');
+  await client.get(Uri.parse('https://jsonplaceholder.typicode.com/photos'));
 
   // compute 함수를 사용하여 parsePhotos를 별도 isolate에서 수행합니다.
   return compute(parsePhotos, response.body);

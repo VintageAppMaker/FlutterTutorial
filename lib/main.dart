@@ -1,4 +1,5 @@
 import 'package:FlutterTutorial/io/AssetReadExample.dart';
+import 'package:FlutterTutorial/io/WebScraperExample.dart';
 import 'package:FlutterTutorial/route.dart';
 import 'package:flutter/material.dart';
 import "io/FileIOExample.dart";
@@ -91,6 +92,9 @@ class _MainPageState extends State<MainPage> {
 
           buildContentItem2(
               context, HttpJsonExample(), "18. HTTP, JSON 예제", "HTTP 통신(Flutter Official)"),
+
+          buildContentItem2(
+              context, WebScraperExample(), "19. WebScraper 예제", "Official Exmaple"),
 
         ],
       ),
