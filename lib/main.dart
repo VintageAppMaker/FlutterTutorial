@@ -1,6 +1,8 @@
+import 'package:FlutterTutorial/io/AssetReadExample.dart';
 import 'package:FlutterTutorial/route.dart';
 import 'package:flutter/material.dart';
 import "io/FileIOExample.dart";
+import 'io/HttpJsonExample.dart';
 import "io/PrefExample.dart";
 import 'package:flutter/services.dart';
 
@@ -83,7 +85,13 @@ class _MainPageState extends State<MainPage> {
           buildContentItem2(context, FileIOExample(storage: FileHelper()),
               "15. File I/O 예제", "File Read/Write를 정리합니다."),
           buildContentItem2(
-              context, PrefExample(), "16. Preference 예제", "Preference를 정리합니다.")
+              context, PrefExample(), "16. Preference 예제", "Preference를 정리합니다."),
+          buildContentItem2(
+              context, AssetReadExample(), "17. Asset 예제", "Asset 파일을 읽기."),
+
+          buildContentItem2(
+              context, HttpJsonExample(), "18. HTTP, JSON 예제", "HTTP 통신(Flutter Official)"),
+
         ],
       ),
     );
