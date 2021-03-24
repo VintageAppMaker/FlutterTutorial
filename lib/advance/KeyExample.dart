@@ -19,8 +19,10 @@ class KetExamplePage extends StatefulWidget {
   _KetExamplePageState createState() => new _KetExamplePageState();
 }
 
-// State내의 값을 유지하고자 한다면
-// key: UniqueKey()와 같이 키값을 지정한다.
+// key: ValueKey(), UniqueKey()와 같이 키값을 지정한다.
+// 프레임웍에서는 위젯을 재정렬(refreash, rebuild)할 때, 키값을 보고 매칭한다.
+// 이 때, 키값이 없는 위젯은 잘못된 매칭으로 재대로 갱신되지 못한다.
+
 List<Widget> lstItmes = [
     ChildWidget(sTitle: "1번 ", key: UniqueKey()),
     ChildWidget(sTitle: "2번 ", key: UniqueKey())
@@ -39,6 +41,7 @@ class _KetExamplePageState extends State<KetExamplePage> {
       )
       ,
       floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.alternate_email_sharp),
           onPressed: () {
             setState(() {
               lstItmes.insert( 1, lstItmes.removeAt(0) );
@@ -76,6 +79,6 @@ class _childState extends State<ChildWidget>{
   }
   @override
   Widget build(BuildContext context) {
-    return Text(widget.sTitle + "$myNumber", style: TextStyle(fontSize: 30),);
+    return Row(children: [Text(widget.sTitle, style: TextStyle(fontSize: 20)), Text("$myNumber", style: TextStyle(fontSize: 20, color: Colors.red) )],);
   }
 }
