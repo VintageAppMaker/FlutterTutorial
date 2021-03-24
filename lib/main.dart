@@ -4,6 +4,7 @@ import 'package:FlutterTutorial/route.dart';
 import 'package:flutter/material.dart';
 import "io/FileIOExample.dart";
 import 'io/HttpJsonExample.dart';
+import 'io/HttpSimple.dart';
 import "io/PrefExample.dart";
 import 'package:flutter/services.dart';
 
@@ -91,10 +92,13 @@ class _MainPageState extends State<MainPage> {
               context, AssetReadExample(), "17. Asset 예제", "Asset 파일을 읽기."),
 
           buildContentItem2(
-              context, HttpJsonExample(), "18. HTTP, JSON 예제", "HTTP 통신(Flutter Official)"),
+              context, HttpSimpleExample(), "18. HTTP, JSON 예제 1", "간단한 플러터 공식예제 1"),
 
           buildContentItem2(
-              context, WebScraperExample(), "19. WebScraper 예제", "Official Exmaple"),
+              context, HttpJsonExample(), "19. HTTP, JSON 예제 2", "json 배열처리 플러터 공식예제 2"),
+
+          buildContentItem2(
+              context, WebScraperExample(), "20. WebScraper 예제", "Official Exmaple"),
 
         ],
       ),
