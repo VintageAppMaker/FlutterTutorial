@@ -2,6 +2,7 @@ import 'package:FlutterTutorial/io/AssetReadExample.dart';
 import 'package:FlutterTutorial/io/WebScraperExample.dart';
 import 'package:FlutterTutorial/route.dart';
 import 'package:flutter/material.dart';
+import 'advance/KeyExample.dart';
 import "io/FileIOExample.dart";
 import 'io/HttpJsonExample.dart';
 import 'io/HttpSimple.dart';
@@ -98,7 +99,14 @@ class _MainPageState extends State<MainPage> {
               context, HttpJsonExample(), "19. HTTP, JSON 예제 2", "json 배열처리 플러터 공식예제 2"),
 
           buildContentItem2(
-              context, WebScraperExample(), "20. WebScraper 예제", "Official Exmaple"),
+              context, WebScraperExample(), "20. WebScraper 예제", "공식예제"),
+
+          buildHeaderBanner(
+              "state", "3. 상태관리", "key, Stream, Provider 활용"),
+
+          buildContentItem2(
+              context, KeyExample(), "21. Key 예제", "key에 대한 기초예제"),
+
 
         ],
       ),
