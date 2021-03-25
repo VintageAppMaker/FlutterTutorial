@@ -2,12 +2,14 @@ import 'package:FlutterTutorial/io/AssetReadExample.dart';
 import 'package:FlutterTutorial/io/WebScraperExample.dart';
 import 'package:FlutterTutorial/route.dart';
 import 'package:flutter/material.dart';
-import 'advance/KeyExample.dart';
+import 'steatemanagement/KeyExample.dart';
 import "io/FileIOExample.dart";
 import 'io/HttpJsonExample.dart';
 import 'io/HttpSimple.dart';
 import "io/PrefExample.dart";
 import 'package:flutter/services.dart';
+
+import 'steatemanagement/InheritedWidgetExample.dart';
 
 void main() {
   runApp(MyApp());
@@ -107,6 +109,8 @@ class _MainPageState extends State<MainPage> {
           buildContentItem2(
               context, KeyExample(), "21. Key 예제", "key에 대한 기초예제"),
 
+          buildContentItem2(
+              context, InWidgetExample(), "22. InheritedWidget 예제", "하위 위젯에게 전역적인 값을 제공"),
 
         ],
       ),
