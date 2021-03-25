@@ -8,6 +8,7 @@ import 'io/HttpJsonExample.dart';
 import 'io/HttpSimple.dart';
 import "io/PrefExample.dart";
 import 'package:flutter/services.dart';
+import 'steatemanagement/ProviderExample.dart';
 
 import 'steatemanagement/InheritedWidgetExample.dart';
 
@@ -16,7 +17,6 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     // 전체화면 만들기
@@ -44,8 +44,7 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: SingleChildScrollView(child: buildCenter(context)));
+    return Scaffold(body: SingleChildScrollView(child: buildCenter(context)));
   }
 
   Center buildCenter(BuildContext context) {
@@ -89,29 +88,23 @@ class _MainPageState extends State<MainPage> {
               "Utility", "2. File, Pref, Network", "파일관리 및 네트워크 예제"),
           buildContentItem2(context, FileIOExample(storage: FileHelper()),
               "15. File I/O 예제", "File Read/Write를 정리합니다."),
-          buildContentItem2(
-              context, PrefExample(), "16. Preference 예제", "Preference를 정리합니다."),
+          buildContentItem2(context, PrefExample(), "16. Preference 예제",
+              "Preference를 정리합니다."),
           buildContentItem2(
               context, AssetReadExample(), "17. Asset 예제", "Asset 파일을 읽기."),
-
-          buildContentItem2(
-              context, HttpSimpleExample(), "18. HTTP, JSON 예제 1", "간단한 플러터 공식예제 1"),
-
-          buildContentItem2(
-              context, HttpJsonExample(), "19. HTTP, JSON 예제 2", "json 배열처리 플러터 공식예제 2"),
-
+          buildContentItem2(context, HttpSimpleExample(), "18. HTTP, JSON 예제 1",
+              "간단한 플러터 공식예제 1"),
+          buildContentItem2(context, HttpJsonExample(), "19. HTTP, JSON 예제 2",
+              "json 배열처리 플러터 공식예제 2"),
           buildContentItem2(
               context, WebScraperExample(), "20. WebScraper 예제", "공식예제"),
-
-          buildHeaderBanner(
-              "state", "3. 상태관리", "key, Stream, Provider 활용"),
-
+          buildHeaderBanner("state", "3. 상태관리", "key, Stream, Provider 활용"),
           buildContentItem2(
               context, KeyExample(), "21. Key 예제", "key에 대한 기초예제"),
-
-          buildContentItem2(
-              context, InWidgetExample(), "22. InheritedWidget 예제", "하위 위젯에게 전역적인 값을 제공"),
-
+          buildContentItem2(context, InWidgetExample(),
+              "22. InheritedWidget 예제", "하위 위젯에게 전역적인 값을 제공"),
+          buildContentItem2(context, ProviderExample(), "23. Provider 예제",
+              "InheritedWidget보다 쉽고 강력해진 기능"),
         ],
       ),
     );
@@ -185,7 +178,8 @@ class _MainPageState extends State<MainPage> {
                 sTitle,
                 style: TextStyle(
                     color: Color.fromRGBO(0xFF, 0xFF, 0xFF, 1),
-                    fontSize: 24, fontWeight: FontWeight.bold), //TextStyle
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold), //TextStyle
               ),
               SizedBox(
                 height: 5,

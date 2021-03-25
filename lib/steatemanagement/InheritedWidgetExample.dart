@@ -1,10 +1,8 @@
-import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class InWidgetExample extends StatelessWidget {
-
-  String sTitle = "22.Inherited Widget 예제";
+  final String sTitle = "22.Inherited Widget 예제";
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -21,14 +19,13 @@ class InWidgetExample extends StatelessWidget {
 }
 
 class _InWidgetExample extends StatefulWidget {
-
   @override
   _InWidgetExampleState createState() => _InWidgetExampleState();
 }
 
 class _InWidgetExampleState extends State<_InWidgetExample> {
   int _count = 10;
-  void clearCount(){
+  void clearCount() {
     setState(() {
       _count = 0;
     });
@@ -41,13 +38,12 @@ class _InWidgetExampleState extends State<_InWidgetExample> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           // ** 하위 위젯에서 rootState를 액세스 가능
-          rootState(
-            clear: clearCount,
-            count: _count, // 외부값과 바인딩함
-            child: Column(
-              children: [ChildOne(), ChildTwo(), ChildThree()],
-            )
-          ),
+          RootState(
+              clear: clearCount,
+              count: _count, // 외부값과 바인딩함
+              child: Column(
+                children: [ChildOne(), ChildTwo(), ChildThree()],
+              )),
           OutlinedButton(
             child: const Text('+'),
             onPressed: () {
@@ -70,9 +66,8 @@ class _InWidgetExampleState extends State<_InWidgetExample> {
   }
 }
 
-class rootState extends InheritedWidget {
-
-  rootState({
+class RootState extends InheritedWidget {
+  RootState({
     Key key,
     @required this.clear,
     @required this.count,
@@ -81,18 +76,18 @@ class rootState extends InheritedWidget {
 
   // << 외부값과 연결 바인딩 >>
   // 실제 데이터와 Action은 외부에서
-  // 구현한다고 생각하고 관리하는 것이 편함
-  Function clear;
-  int count;
+  // 구현하고 이곳에서는 바인딩(연결)만 관리
+  final Function clear;
+  final int count;
 
   // 외부에서 접근할 시 사용하는 메소드
-  static rootState of(BuildContext context) {
-    return context.dependOnInheritedWidgetOfExactType<rootState>();
+  static RootState of(BuildContext context) {
+    return context.dependOnInheritedWidgetOfExactType<RootState>();
   }
 
   // 갱신조건
   @override
-  bool updateShouldNotify(covariant rootState oldWidget) {
+  bool updateShouldNotify(covariant RootState oldWidget) {
     return oldWidget.count != count;
   }
 }
@@ -100,9 +95,12 @@ class rootState extends InheritedWidget {
 class ChildOne extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final rootState state = rootState.of(context);
+    final RootState rs = RootState.of(context);
     return Center(
-      child: Text("${state.count} 입니다.", style: TextStyle(fontSize: 30),),
+      child: Text(
+        "${rs.count} 입니다.",
+        style: TextStyle(fontSize: 30),
+      ),
     );
   }
 }
@@ -110,10 +108,12 @@ class ChildOne extends StatelessWidget {
 class ChildTwo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final rootState state
-    = rootState.of(context);
+    final RootState rs = RootState.of(context);
     return Center(
-      child: Text("${state.count} 입니다.", style: TextStyle(color: Colors.red, fontSize: 20),),
+      child: Text(
+        "${rs.count} 입니다.",
+        style: TextStyle(color: Colors.red, fontSize: 20),
+      ),
     );
   }
 }
@@ -123,18 +123,17 @@ class ChildThree extends StatefulWidget {
   ChildThreeState createState() => ChildThreeState();
 }
 
-class ChildThreeState extends State<ChildThree>{
+class ChildThreeState extends State<ChildThree> {
   Widget build(BuildContext context) {
-    final rootState state = rootState.of(context);
+    final RootState rs = RootState.of(context);
     return Center(
         child: OutlinedButton(
-          child: const Text('clear'),
-          onPressed: () {
-            setState(() {
-              state.clear();
-            });
-          },
-        )
-    );
+      child: Text('clear'),
+      onPressed: () {
+        setState(() {
+          rs.clear();
+        });
+      },
+    ));
   }
 }
