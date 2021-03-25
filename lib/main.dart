@@ -1,6 +1,7 @@
 import 'package:FlutterTutorial/io/AssetReadExample.dart';
 import 'package:FlutterTutorial/io/WebScraperExample.dart';
 import 'package:FlutterTutorial/route.dart';
+import 'package:FlutterTutorial/steatemanagement/StreamBuilderExample.dart';
 import 'package:flutter/material.dart';
 import 'steatemanagement/KeyExample.dart';
 import "io/FileIOExample.dart";
@@ -105,6 +106,8 @@ class _MainPageState extends State<MainPage> {
               "22. InheritedWidget 예제", "하위 위젯에게 전역적인 값을 제공"),
           buildContentItem2(context, ProviderExample(), "23. Provider 예제",
               "InheritedWidget보다 쉽고 강력해진 기능"),
+          buildContentItem2(context, StreamBuilderExample(), "24. StreamBuilder & HTTP 예제",
+              "StreamBuilder를 이용한 비동기통신 "),
         ],
       ),
     );
