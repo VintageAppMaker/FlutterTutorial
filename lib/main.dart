@@ -1,3 +1,5 @@
+import 'package:FlutterTutorial/advance/RefreshIndicatorExample.dart';
+import 'package:FlutterTutorial/advance/StaggeredGridViewExample.dart';
 import 'package:FlutterTutorial/io/AssetReadExample.dart';
 import 'package:FlutterTutorial/io/WebScraperExample.dart';
 import 'package:FlutterTutorial/route.dart';
@@ -108,6 +110,11 @@ class _MainPageState extends State<MainPage> {
               "InheritedWidget보다 쉽고 강력해진 기능"),
           buildContentItem2(context, StreamBuilderExample(), "24. StreamBuilder & HTTP 예제",
               "StreamBuilder를 이용한 비동기통신 "),
+          buildHeaderBanner("state", "4. 기타", "기타 위젯 및 기능"),
+          buildContentItem2(context, RefreshIndicatorExample(), "25. RefreshIndicator 예제",
+              "화면을 pulldown하여 리스트 갱신"),
+          buildContentItem2(context, StaggeredExample(), "26. Staggered Gridview 예제",
+              "Staggered Gridview 사용법"),
         ],
       ),
     );

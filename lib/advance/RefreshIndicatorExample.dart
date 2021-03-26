@@ -1,71 +1,56 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 
-void main() => runApp(new MyApp());
 
-class MyApp extends StatelessWidget {
+class RefreshIndicatorExample extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return new MaterialApp(
-      title: 'Flutter Demo',
-      theme: new ThemeData(
-        primarySwatch: Colors.purple,
-      ),
-      home: new MyHomePage(),
-    );
+  _RefreshIndicatorExampleState createState() => new _RefreshIndicatorExampleState();
+}
+
+class _RefreshIndicatorExampleState extends State<RefreshIndicatorExample> {
+  var counter = 0;
+  var items = <Widget>[];
+
+  @override
+  void initState() {
+    super.initState();
   }
-}
-
-class MyHomePage extends StatefulWidget {
-  @override
-  _MyHomePageState createState() => new _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _count = 0;
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text("Home Page"),
+    return Scaffold(
+      appBar: AppBar(
+        title: new Text("24. RefreshIndicator 예제"),
       ),
-      body: new RefreshIndicator(
-        child: new ListView(
-          children: _getItems(),
-        ),
-        onRefresh: _handleRefresh,
-      ),
-    );
-  }
-
-  List<Widget> _getItems() {
-    var items = <Widget>[];
-    for (int i = _count; i < _count + 4; i++) {
-      var item = new Column(
-        children: <Widget>[
-          new ListTile(
-            title: new Text("Item $i"),
+      body: Column(children: [
+        Text("pulldown하면 데이터 갱신", style: TextStyle(fontSize: 20, color: Colors.red),),
+        Expanded(child: RefreshIndicator(
+          child: ListView(
+            children: getItemsByDesc(),
           ),
-          new Divider(
-            height: 2.0,
-          )
-        ],
-      );
-
-      items.add(item);
-    }
-    return items;
+          onRefresh: refreshHandler,
+        ))
+      ],),
+    );
   }
 
-  Future<Null> _handleRefresh() async {
-    await new Future.delayed(new Duration(seconds: 3));
+  List<Widget> getItemsByDesc() {
+    return items.reversed.toList();
+  }
+
+  Future<Null> refreshHandler() async {
+    await Future.delayed(new Duration(seconds: 2));
 
     setState(() {
-      _count += 5;
+      addItems(counter++);
     });
+  }
 
-    return null;
+  void addItems(int n) {
+    items.add(ListTile(
+        title: Text("$n")));
+
+    print(items.length);
+
   }
 }
