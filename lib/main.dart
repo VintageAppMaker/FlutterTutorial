@@ -6,6 +6,7 @@ import 'package:FlutterTutorial/io/WebScraperExample.dart';
 import 'package:FlutterTutorial/route.dart';
 import 'package:FlutterTutorial/steatemanagement/StreamBuilderExample.dart';
 import 'package:flutter/material.dart';
+import 'advance/SliverExample.dart';
 import 'steatemanagement/KeyExample.dart';
 import "io/FileIOExample.dart";
 import 'io/HttpJsonExample.dart';
@@ -118,6 +119,8 @@ class _MainPageState extends State<MainPage> {
               "Staggered Gridview 사용법"),
           buildContentItem2(context, HorizontalListExample(), "27. Horizontal List 예제",
               "Horizontal List 사용법"),
+          buildContentItem2(context, SliverExample(), "28. Sliver 예제",
+              "Sliver 사용법"),
 
         ],
       ),
