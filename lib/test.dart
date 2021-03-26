@@ -1,98 +1,47 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
+void main() => runApp(MyApp());
 
-import 'package:http/http.dart' as http;
-import 'dart:convert';
-import 'dart:async';
-
-class Number {
-  int value;
-
-  Number(this.value);
-
-  factory Number.fromJSON(Map<String, dynamic> json) {
-    return Number(json['value']);
-  }
-}
-
-Future<Number> getNumber({int num = 20}) async {
-  http.Response res = await http.get(Uri.http("dummyresponse.pythonanywhere.com", "/api/$num"));
-  print(res.body);
-  return Number.fromJSON(json.decode(res.body));
-}
-
-Stream<Number> getNumbers(Duration refreshTime) async* {
-  while (true) {
-    await Future.delayed(refreshTime);
-    yield await getNumber();
-  }
-}
-
-class StreamBuilderExample extends StatefulWidget {
-  StreamBuilderExample({Key key}) : super(key: key);
-
-  @override
-  _StreamBuilderExampleState createState() => _StreamBuilderExampleState();
-}
-
-class _StreamBuilderExampleState extends State<StreamBuilderExample> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-          child: StreamBuilder(
-            stream: getNumbers(Duration(seconds: 1)),
-            initialData: Number(0),
-            builder: (context, stream) {
-              if (stream.connectionState == ConnectionState.done) {
-                return Icon(
-                  Icons.check_circle,
-                  color: Colors.green,
-                  size: 20,
-                );
-              }
-              if (stream.hasData) {
-                return LikeCounter(stream.data.value);
-              } else {
-                return CircularProgressIndicator();
-              }
-            },
-          )),
-    );
-  }
-}
-
-class LikeCounter extends StatelessWidget {
-  static List<Color> colors = [
-    Colors.green,
-    Colors.purpleAccent,
-    Colors.deepPurple,
-    Colors.blueAccent,
-    Colors.deepOrangeAccent
-  ];
-  final int num;
-
-  LikeCounter(this.num);
+class MyApp extends StatelessWidget {
+  MyApp({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedContainer(
-      duration: Duration(milliseconds: 250),
-      padding: EdgeInsets.all(10),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(100),
-        color: colors[num % colors.length],
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          Icon(Icons.favorite, color: Colors.white),
-          Text(
-            " $num Likes",
-            style: TextStyle(color: Colors.white, fontSize: 20),
-          ),
-        ],
+    final title = 'Floating App Bar';
+
+    return MaterialApp(
+      title: title,
+      home: Scaffold(
+        // No appbar provided to the Scaffold, only a body with a
+        // CustomScrollView.
+        body: CustomScrollView(
+          slivers: <Widget>[
+            // Add the app bar to the CustomScrollView.
+            SliverAppBar(
+              // Provide a standard title.
+              title: Text(title),
+              // Allows the user to reveal the app bar if they begin scrolling
+              // back up the list of items.
+              floating: true,
+              // Display a placeholder widget to visualize the shrinking size.
+              flexibleSpace: Image.asset("assets/images/title.jpg", fit: BoxFit.cover),
+              // Make the initial height of the SliverAppBar larger than normal.
+              expandedHeight: 200,
+            ),
+            // Next, create a SliverList
+            SliverList(
+              // Use a delegate to build items as they're scrolled on screen.
+              delegate: SliverChildBuilderDelegate(
+                // The builder function returns a ListTile with a title that
+                // displays the index of the current item.
+                    (context, index) => ListTile(title: Text('$index')),
+                // Builds 1000 ListTiles
+                childCount: 1000,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

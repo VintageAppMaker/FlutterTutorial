@@ -1,3 +1,4 @@
+import 'package:FlutterTutorial/advance/HorizontalListExample.dart';
 import 'package:FlutterTutorial/advance/RefreshIndicatorExample.dart';
 import 'package:FlutterTutorial/advance/StaggeredGridViewExample.dart';
 import 'package:FlutterTutorial/io/AssetReadExample.dart';
@@ -115,6 +116,9 @@ class _MainPageState extends State<MainPage> {
               "화면을 pulldown하여 리스트 갱신"),
           buildContentItem2(context, StaggeredExample(), "26. Staggered Gridview 예제",
               "Staggered Gridview 사용법"),
+          buildContentItem2(context, HorizontalListExample(), "27. Horizontal List 예제",
+              "Horizontal List 사용법"),
+
         ],
       ),
     );
