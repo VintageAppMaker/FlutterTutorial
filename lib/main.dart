@@ -178,8 +178,9 @@ class _MainPageState extends State<MainPage> {
   Widget buildHeaderBanner(String sBanner, String sTitle, String sSubTitle) {
     return Banner(
       message: sBanner,
+      textStyle: TextStyle(color: Colors.red),
       location: BannerLocation.bottomStart,
-      color: Colors.red,
+      color: Colors.white,
       child: Container(
         width: double.infinity,
         color: Colors.red,
@@ -203,7 +204,7 @@ class _MainPageState extends State<MainPage> {
               Text(
                 sSubTitle,
                 style: TextStyle(
-                    color: Color.fromRGBO(0xF3, 0xF3, 0xF3, 0.8),
+                    color: Color.fromRGBO(0xFF, 0xFF, 0xF3, 0.8),
                     fontSize: 12,
                     fontWeight: FontWeight.bold), //TextStyle
               ), //Text
