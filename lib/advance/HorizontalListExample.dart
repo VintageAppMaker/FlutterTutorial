@@ -38,7 +38,7 @@ class _HorizontalListExampleState extends State<HorizontalListExample> {
                   elevation: 4,
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                   child: Column( children: [
-                    SizedBox (width: double.infinity, child: Container(color: Colors.black12, child: Text("Head Info", textAlign: TextAlign.center, style: TextStyle(color: Colors.white, fontSize: 30),))),
+                    SizedBox (width: double.infinity, child: ClipRRect(borderRadius: BorderRadius.vertical(top: Radius.circular(10)), child: Container(color: Colors.red, child: Text("Head Info", textAlign: TextAlign.center, style: TextStyle(color: Colors.white, fontSize: 30),)))),
                     SizedBox(height: 20),
                     Expanded(flex: 2, child: Container (child: Center(child:
                       ClipRRect(child: Image.asset("assets/images/title.jpg"), borderRadius: BorderRadius.all(
