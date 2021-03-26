@@ -56,7 +56,7 @@ class ImageExample extends StatelessWidget {
         ),
         Center(
           child: Image.network(
-              "http://vintageappmaker.com/wp-content/uploads/2015/03/cropped-logo.png"),
+              "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"),
         )
       ],
     );
