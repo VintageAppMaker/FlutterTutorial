@@ -7,6 +7,7 @@ import 'package:FlutterTutorial/route.dart';
 import 'package:FlutterTutorial/steatemanagement/StreamBuilderExample.dart';
 import 'package:flutter/material.dart';
 import 'advance/PermissionExample.dart';
+import 'advance/ShareExample.dart';
 import 'advance/SliverExample.dart';
 import 'steatemanagement/KeyExample.dart';
 import "io/FileIOExample.dart";
@@ -122,9 +123,10 @@ class _MainPageState extends State<MainPage> {
               "27. Horizontal List 예제", "Horizontal List 사용법"),
           buildContentItem2(
               context, SliverExample(), "28. Sliver 예제", "Sliver 사용법"),
-
           buildContentItem2(
               context, PermissionExample(), "29. Permission 예제", "Native인 Android 소스수정이 필요"),
+          buildContentItem2(
+              context, ShareExample(), "30. Share 예제", "Share 기능설명"),
         ],
       ),
     );
