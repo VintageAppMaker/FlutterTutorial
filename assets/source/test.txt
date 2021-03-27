@@ -1,43 +1,114 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'dart:async';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:permission_handler/permission_handler.dart';
 
-class AssetReadExample extends StatefulWidget {
-  @override
-  _AssetReadState createState() => _AssetReadState();
+HandlePermissionDemoState pageState;
+
+class Item {
+  PermissionGroup group;
+  PermissionStatus status;
+
+  Item(this.group, this.status);
 }
 
-class _AssetReadState extends State<AssetReadExample> {
-  String _str = "";
+class HandlePermissionDemo extends StatefulWidget {
+  @override
+  HandlePermissionDemoState createState() {
+    pageState = HandlePermissionDemoState();
+    return pageState;
+  }
+}
 
-  // TextField의 컨트롤러 선언
-  final editController = TextEditingController();
-  static String prefFIELD = "lastname";
+class HandlePermissionDemoState extends State<HandlePermissionDemo> {
+  List<Item> list = List<Item>();
+
   @override
   void initState() {
     super.initState();
-    _loadString("assets/source/test.txt");
+    initList();
   }
 
-  void _loadString(String sFile) async {
-    String text = await rootBundle.loadString(sFile);
-    setState(() {
-      _str = text;
-    });
+  void initList() {
+    list.clear();
+    for (var i = 0; i < PermissionGroup.values.length; i++) {
+      list.add(Item(PermissionGroup.values[i], PermissionStatus.denied));
+    }
+    resolveState();
   }
 
-  String sTitle = "16. Preference ";
+  void resolveState() {
+    for (var index = 0; index < PermissionGroup.values.length; index++) {
+      Future<PermissionStatus> status =
+          PermissionHandler().checkPermissionStatus(list[index].group);
+      status.then((PermissionStatus status) {
+        setState(() {
+          list[index].status = status;
+        });
+      });
+    }
+  }
+
+  permissionItem(int index) {
+    return Container(
+      child: ListTile(
+        leading: CircleAvatar(
+          child: Text(index.toString()),
+        ),
+        title: Text(pageState.list[index].group.toString()),
+        subtitle: (pageState.list[index].status != null)
+            ? Text(
+          pageState.list[index].status.toString(),
+          style: statusColors(index),
+        )
+            : null,
+        onTap: () {
+          requestPermission(index);
+        },
+      ),
+    );
+  }
+
+  statusColors(int index) {
+    switch (pageState.list[index].status.value) {
+      case 2:
+        return TextStyle(color: Colors.blue);
+      case 4:
+        return TextStyle(color: Colors.grey);
+      default:
+        return TextStyle(color: Colors.red);
+    }
+  }
+
+  Future requestPermission(int index) async {
+    print("hello");
+    await PermissionHandler().requestPermissions([pageState.list[index].group]);
+    pageState.initList();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: sTitle,
-      home: Scaffold(
-        appBar: AppBar(title: Text(sTitle)),
-        body: Center(
-            child: Column(children: [
-              Text("$_str"), // TextField 예제
-            ])),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Permission List"),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.refresh),
+            onPressed: () {
+              initList();
+            },
+          ),
+          IconButton(
+            icon: Icon(Icons.settings),
+            onPressed: () {
+              PermissionHandler().openAppSettings();
+            },
+          )
+        ],
+      ),
+      body: ListView.builder(
+        itemCount: list.length,
+        itemBuilder: (context, index) {
+          return permissionItem(index);
+        },
       ),
     );
   }
