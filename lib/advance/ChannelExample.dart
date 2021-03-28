@@ -8,11 +8,31 @@ class ChannelExample extends StatefulWidget {
 
 class ChannelExampleState extends State<ChannelExample> {
   var platform = MethodChannel("com.psw.dev/test");
+  String sTitle ="31. channel 테스트";
+  String sMessage = "";
+
+  @override
+  void initState() {
+    platform.setMethodCallHandler(callbackHandler);
+    super.initState();
+  }
+
+  Future<dynamic> callbackHandler(MethodCall call) async {
+    switch (call.method) {
+      case "callbackString":
+        var s = call.arguments;
+        setState(() {
+          sMessage = s;
+        });
+
+        break;
+      default:
+        throw ("method not defined");
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
-    String sTitle ="31. channel 테스트";
-    String sMessage = "from Android:";
     return MaterialApp(
       title: sTitle,
       home: Scaffold(
@@ -25,6 +45,7 @@ class ChannelExampleState extends State<ChannelExample> {
               child: Center(child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
+                  Text(sMessage),
                   const Padding(padding: EdgeInsets.only(top: 22.0)),
                   buildSnackBarBuilder(),
                   const Padding(padding: EdgeInsets.only(top: 12.0)),
@@ -43,10 +64,10 @@ class ChannelExampleState extends State<ChannelExample> {
         backgroundColor: Colors.red,
         foregroundColor: Colors.white,
         onPressed: ()  {
-          getTest(context);
+          getString(context);
         },
         icon: Icon(Icons.android),
-        label: Text("Android channel"),
+        label: Text("Android와 통신"),
       );
     });
   }
@@ -55,10 +76,12 @@ class ChannelExampleState extends State<ChannelExample> {
     Scaffold.of(ctx).showSnackBar(SnackBar(content: Text(s)));
   }
 
-  void getTest(BuildContext ctx) async {
-    var s = await platform.invokeMethod("getTest");
+  void getString(BuildContext ctx) async {
+    var s = await platform.invokeMethod("getString");
     print(s);
     showSnackBar(ctx, s);
+
+    await platform.invokeMethod("startCallback");
   }
 
 }
