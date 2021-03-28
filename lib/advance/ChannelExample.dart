@@ -9,7 +9,8 @@ class ChannelExample extends StatefulWidget {
 class ChannelExampleState extends State<ChannelExample> {
   var platform = MethodChannel("com.psw.dev/test");
   String sTitle ="31. channel 테스트";
-  String sMessage = "";
+
+  GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
@@ -21,9 +22,12 @@ class ChannelExampleState extends State<ChannelExample> {
     switch (call.method) {
       case "callbackString":
         var s = call.arguments;
-        setState(() {
-          sMessage = s;
-        });
+
+        _scaffoldKey.currentState.showSnackBar(SnackBar(
+          content: Text(s),
+          duration: Duration(seconds: 3),
+        ));
+        
 
         break;
       default:
@@ -36,6 +40,7 @@ class ChannelExampleState extends State<ChannelExample> {
     return MaterialApp(
       title: sTitle,
       home: Scaffold(
+          key: _scaffoldKey,
           appBar: AppBar(
             title: Text(sTitle),
           ),
@@ -45,7 +50,6 @@ class ChannelExampleState extends State<ChannelExample> {
               child: Center(child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text(sMessage),
                   const Padding(padding: EdgeInsets.only(top: 22.0)),
                   buildSnackBarBuilder(),
                   const Padding(padding: EdgeInsets.only(top: 12.0)),
@@ -64,7 +68,7 @@ class ChannelExampleState extends State<ChannelExample> {
         backgroundColor: Colors.red,
         foregroundColor: Colors.white,
         onPressed: ()  {
-          getString(context);
+          doCallAPI(context);
         },
         icon: Icon(Icons.android),
         label: Text("Android와 통신"),
@@ -72,14 +76,14 @@ class ChannelExampleState extends State<ChannelExample> {
     });
   }
 
-  void showSnackBar(BuildContext ctx, String s) {
-    Scaffold.of(ctx).showSnackBar(SnackBar(content: Text(s)));
-  }
 
-  void getString(BuildContext ctx) async {
+  void doCallAPI(BuildContext ctx) async {
     var s = await platform.invokeMethod("getString");
     print(s);
-    showSnackBar(ctx, s);
+    _scaffoldKey.currentState.showSnackBar(SnackBar(
+      content: Text(s),
+      duration: Duration(seconds: 3),
+    ));
 
     await platform.invokeMethod("startCallback");
   }
