@@ -6,6 +6,7 @@ import 'package:FlutterTutorial/io/WebScraperExample.dart';
 import 'package:FlutterTutorial/route.dart';
 import 'package:FlutterTutorial/steatemanagement/StreamBuilderExample.dart';
 import 'package:flutter/material.dart';
+import 'advance/ChannelExample.dart';
 import 'advance/PermissionExample.dart';
 import 'advance/ShareExample.dart';
 import 'advance/SliverExample.dart';
@@ -127,6 +128,8 @@ class _MainPageState extends State<MainPage> {
               context, PermissionExample(), "29. Permission 예제", "Native인 Android 소스수정이 필요"),
           buildContentItem2(
               context, ShareExample(), "30. Share 예제", "Share 기능설명"),
+          buildContentItem2(
+              context, ChannelExample(), "31. Channel 예제", "Native와 통신")
         ],
       ),
     );
