@@ -15,19 +15,24 @@ class LayoutExample extends StatelessWidget {
   }
 
   Widget buildTestBody() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisSize: MainAxisSize.min,
-      children: <Widget>[
-        // layout 예제
-        buildCenterColumn(),
-        buildCenterRow(),
-        buildSizedBox(),
+    return SingleChildScrollView(child:
+      Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          // layout 예제
+          buildCenterColumn(),
+          buildCenterRow(),
+          buildSizedBox(),
 
-        Divider(color: Colors.black),
-        buildRow(),
-        buildCenter()
-      ],
+          Divider(color: Colors.black),
+          buildRow(),
+          buildCenter(),
+
+          Divider(color: Colors.black),
+          buildInVisibleVisible()
+        ],
+      )
     );
   }
 
@@ -103,5 +108,27 @@ class LayoutExample extends StatelessWidget {
         child: Row(
           children: [for (int i = 0; i < 10; i++) Text("$i")],
         ));
+  }
+
+  Widget buildInVisibleVisible(){
+    return Center( child: Column(children: [
+      Text("opacity: 1.0"),
+      Opacity(opacity: 1.0, child: Container(width: 100, height: 100, color: Colors.black)),
+
+      // 공간 할당하고 보이지 않는다.
+      Text("opacity: 0.0"),
+      Opacity(opacity: 0.0, child: Container(width: 100, height: 100, color: Colors.red)),
+
+      // 공간 할당없이 보이지않는다.
+      Text("Visibility: false"),
+      Visibility(visible: false, child: Container(width: 100, height: 100, color: Colors.green)),
+
+      // 공간 할당없이 보이지않는다.
+      Text("Offstage: false"),
+      Offstage( offstage: false, child: Container(width: 100, height: 100, color: Colors.green)),
+
+      Text("Visibility: true"),
+      Visibility(visible: true, child: Container(width: 100, height: 100, color: Colors.black)),
+    ]));
   }
 }

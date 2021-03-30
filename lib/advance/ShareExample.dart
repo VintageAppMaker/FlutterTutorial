@@ -17,9 +17,15 @@ class ShareExampleState extends State<ShareExample> {
     String sTitle ="30. Share 예제";
     return MaterialApp(
       title: sTitle,
+      theme: ThemeData(
+        primarySwatch: Colors.red,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
       home: Scaffold(
+
           appBar: AppBar(
             title: Text(sTitle),
+
           ),
           body: SingleChildScrollView(
             child: Padding(

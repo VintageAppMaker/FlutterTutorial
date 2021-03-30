@@ -39,6 +39,10 @@ class ChannelExampleState extends State<ChannelExample> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: sTitle,
+      theme: ThemeData(
+        primarySwatch: Colors.red,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
       home: Scaffold(
           key: _scaffoldKey,
           appBar: AppBar(

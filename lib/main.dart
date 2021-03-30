@@ -10,6 +10,7 @@ import 'advance/ChannelExample.dart';
 import 'advance/PermissionExample.dart';
 import 'advance/ShareExample.dart';
 import 'advance/SliverExample.dart';
+import 'advance/ThemeExample.dart';
 import 'steatemanagement/KeyExample.dart';
 import "io/FileIOExample.dart";
 import 'io/HttpJsonExample.dart';
@@ -129,7 +130,9 @@ class _MainPageState extends State<MainPage> {
           buildContentItem2(
               context, ShareExample(), "30. Share 예제", "Share 기능설명"),
           buildContentItem2(
-              context, ChannelExample(), "31. Channel 예제", "Native와 통신")
+              context, ChannelExample(), "31. Channel 예제", "Native와 통신"),
+          buildContentItem2(
+              context, ThemeExample(), "32. Theme 예제", "Native와 통신")
         ],
       ),
     );
