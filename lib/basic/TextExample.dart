@@ -37,7 +37,16 @@ class TextExample extends StatelessWidget {
             width: double.infinity,
             child: Text("Test5",
                 textAlign: TextAlign.end,
-                style: TextStyle(color: Colors.black)))
+                style: TextStyle(color: Colors.black))),
+
+        Text.rich(
+          TextSpan( text: 'This',
+            children: <TextSpan>[
+              TextSpan(text: ' is ', style: TextStyle(color: Colors.green, fontStyle: FontStyle.italic)),
+              TextSpan(text: ' rich 텍스트', style: TextStyle(fontWeight: FontWeight.bold)), ],
+          ),
+        )
+
       ],
     ));
   }
