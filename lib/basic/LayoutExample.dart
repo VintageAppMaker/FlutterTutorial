@@ -15,25 +15,46 @@ class LayoutExample extends StatelessWidget {
   }
 
   Widget buildTestBody() {
-    return SingleChildScrollView(child:
-      Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          // layout 예제
-          buildCenterColumn(),
-          buildCenterRow(),
-          buildSizedBox(),
+    return Builder(builder: buildBuilderWidget);
+  }
 
-          Divider(color: Colors.black),
-          buildRow(),
-          buildCenter(),
+  Widget buildBuilderWidget(context) => SingleChildScrollView(child:
+  Column(
+    crossAxisAlignment: CrossAxisAlignment.center,
+    mainAxisSize: MainAxisSize.min,
+    children: <Widget>[
+      // layout 예제
+      buildCenterColumn(),
+      buildCenterRow(),
+      buildSizedBox(),
+  
+      Divider(color: Colors.black),
+      buildRow(),
+      buildCenter(),
+  
+      Divider(color: Colors.black),
+      buildInVisibleVisible(),
+  
+      Divider(color: Colors.black),
+      buildSpacerAndClipShape(),
+  
+      Divider(color: Colors.black),
+      buildTransForm(context)
+  
+    ],
+  )
+  );
 
-          Divider(color: Colors.black),
-          buildInVisibleVisible()
-        ],
-      )
-    );
+  Center buildSpacerAndClipShape() {
+    return Center(
+          child: Column(
+            children: <Widget>[
+              Row(children: [buildClipRectCenter(), Spacer(),  buildClipRectRight(), Spacer(),  buildBoxDeco(), Spacer()]),
+              Divider(),
+              buildClipRect()
+            ],
+          ),
+        );
   }
 
   Center buildCenter() {
@@ -130,5 +151,70 @@ class LayoutExample extends StatelessWidget {
       Text("Visibility: true"),
       Visibility(visible: true, child: Container(width: 100, height: 100, color: Colors.black)),
     ]));
+  }
+
+  ClipRect buildClipRect() {
+    return ClipRect(
+      child: Align(
+        alignment: Alignment.topCenter,
+        widthFactor: 0.75,
+        heightFactor: 0.75,
+        child: SizedBox(width: 150, height: 150, child: Image.network(
+            "https://miro.medium.com/max/1600/1*-e5Hl_0novHiOgPNVXzNLw.gif"),),
+      ),
+    );
+  }
+
+  Widget buildClipRectCenter() {
+    return Container(width: 80, height: 80, child: ClipRRect(
+      borderRadius: BorderRadius.circular(15.0),
+      child: Align(
+        alignment: Alignment.topCenter,
+        widthFactor: 1,
+        heightFactor: 1,
+        child: Image.network(
+            "https://www.fightersgeneration.com/nf7/char/king-tekken3-frankensteiner-on-lei.gif"),
+      ),
+    ),);
+  }
+
+  Widget buildClipRectRight() {
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(35.0),
+      child: Container(color: Colors.amber, width: 100, height:100 , child: Align(
+          alignment: Alignment.bottomRight,
+          widthFactor: 1,
+          heightFactor: 1,
+          child: Container(margin: EdgeInsets.only(left: 0.0, bottom: 10.5, right: 10.5),  child: Text("❤"),)
+      ),),
+    );
+  }
+
+  Widget buildBoxDeco() {
+    return Container(
+      height: 50,
+      width: 100,
+      decoration: new BoxDecoration(
+        color: Colors.orangeAccent,
+        border: Border.all(color: Colors.red, width: 0.0),
+        borderRadius: new BorderRadius.all(Radius.elliptical(50, 50)),
+      ),
+      child: Align(alignment: Alignment.center, child: Text('Box')),
+    );
+  }
+
+  Widget buildTransForm(BuildContext context) {
+    return Transform.translate(
+      offset: Offset(-100, -10),
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.orange,
+          borderRadius: BorderRadius.circular(20.0),
+        ),
+        width: MediaQuery.of(context).size.width*0.3,
+        height: MediaQuery.of(context).size.height*0.12,
+        child: SizedBox(child:Image.asset( "assets/images/title.jpg"))
+      ),
+    );
   }
 }
