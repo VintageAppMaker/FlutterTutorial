@@ -7,6 +7,7 @@ import 'package:FlutterTutorial/route.dart';
 import 'package:FlutterTutorial/steatemanagement/StreamBuilderExample.dart';
 import 'package:flutter/material.dart';
 import 'advance/ChannelExample.dart';
+import 'advance/PageViewExample.dart';
 import 'advance/PermissionExample.dart';
 import 'advance/ShareExample.dart';
 import 'advance/SliverExample.dart';
@@ -132,7 +133,9 @@ class _MainPageState extends State<MainPage> {
           buildContentItem2(
               context, ChannelExample(), "31. Channel 예제", "Native와 통신"),
           buildContentItem2(
-              context, ThemeExample(), "32. Theme 예제", "Native와 통신")
+              context, ThemeExample(), "32. Theme 예제", "Native와 통신"),
+          buildContentItem2(
+              context, PageViewExample(), "33. PageView 예제", "PageView 예제")
         ],
       ),
     );
