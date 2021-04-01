@@ -80,3 +80,6 @@
     - 플러터로 제약없는 앱을 만들고자 한다면 결국, Native Project(iOS, Android)를 개발할 수 밖에 없다
 
 
+5. 개발환경 참고사항
+    - flutter run -d chrome --web-renderer html 를 해야 Web에서 외부네트워크를 이용한 이미지 로딩 시 에러가 발생하지 않는다.  
+    - flutter 2.X대부터 공식적으로 웹 퍼블리싱 가능하다(빌드시 웹으로 연결). 
