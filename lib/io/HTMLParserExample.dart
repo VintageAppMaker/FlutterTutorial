@@ -25,7 +25,7 @@ class _HTMLParserExampleState extends State<HTMLParserExample> {
     final document = html_parser.parse(response.body);
 
     setState(() {
-      lst = document.getElementsByClassName('tit_post');
+      lst = document.getElementsByClassName('thumbnail_post');
     });
   }
 
@@ -51,7 +51,8 @@ class _HTMLParserExampleState extends State<HTMLParserExample> {
                       itemCount: lst.length,
                       itemBuilder: (BuildContext context, int index) {
                         return ListTile(
-                          title: Text(lst[index].text),
+                          title: Text(lst[index].parent.children[1].children[0].text ?? " ", style: TextStyle(fontSize: 14)),
+                          trailing: Image.network("https:" + lst[index].children[0].attributes['src']),
                         );
                       }
                     )
