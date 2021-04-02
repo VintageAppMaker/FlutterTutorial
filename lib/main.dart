@@ -6,6 +6,7 @@ import 'package:FlutterTutorial/io/HTMLParserExample.dart';
 import 'package:FlutterTutorial/route.dart';
 import 'package:FlutterTutorial/steatemanagement/StreamBuilderExample.dart';
 import 'package:flutter/material.dart';
+import 'advance/BackPressedExample.dart';
 import 'advance/ChannelExample.dart';
 import 'advance/PageViewExample.dart';
 import 'advance/PermissionExample.dart';
@@ -138,7 +139,10 @@ class _MainPageState extends State<MainPage> {
           buildContentItem2(
               context, PageViewExample(), "33. PageView 예제", "PageView 예제"),
           buildContentItem2(
-              context, WebViewExample(), "34. WebView 예제", "WebView 공식예제(pub.dev)")
+              context, WebViewExample(), "34. WebView 예제", "WebView 공식예제(pub.dev)"),
+          buildContentItem2(
+              context, BackPressedExample(), "35. BackPressed 예제", "BackPressed 기능설명")
+
         ],
       ),
     );
