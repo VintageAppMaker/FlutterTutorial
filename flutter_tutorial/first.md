@@ -78,6 +78,7 @@
     - Native 기능의 많은 부분을 플러그인으로 해결해야햔다(플러터는 멀트플랫폼 UI 엔진임을 잊어서는 안된다).
     - 플러그인끼리 종종 충돌한다(SDK 버전호환성). 결국 Channel로 Native 코드(iOS, Android)를 만들어 통신하는 것이 속편할 때가 있다.
     - 플러터로 제약없는 앱을 만들고자 한다면 결국, Native Project(iOS, Android)를 개발할 수 밖에 없다
+    - 플러그인 정보는 [pub.dev](https://pub.dev)이 답이다.
 
 
 5. 개발환경 참고사항

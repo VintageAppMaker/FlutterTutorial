@@ -122,7 +122,7 @@ packages:
     source: hosted
     version: "7.1.8"
   html:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: html
       url: "https://pub.dartlang.org"
@@ -448,13 +448,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.0"
-  web_scraper:
+  webview_flutter:
     dependency: "direct main"
     description:
-      name: web_scraper
+      name: webview_flutter
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.1.4"
+    version: "2.0.2"
   widget_with_codeview:
     dependency: "direct main"
     description:
