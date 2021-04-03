@@ -15,9 +15,14 @@
       },
     ),
         
-    TextField(
-      controller: editController,
-    )
+    ...
+    
+    // 화면출력
+    void setDisplay(String s) {
+      setState(() {
+        _display = s; // String _display
+      });
+    }
     ~~~
 
 - controller 변수를 통해서도 객체를 넘겨서 addListener()를 통해 핸들러를 작성할 수 있다. initState()에서 구현하고 dispose()에서 해제해주어야 한다.
