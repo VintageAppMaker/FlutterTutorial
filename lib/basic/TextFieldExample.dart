@@ -68,6 +68,10 @@ class RootWidgetState extends State<RootWidget> {
 
         // TextField 예제
         TextField(
+          decoration: InputDecoration(
+            border: OutlineInputBorder(),
+            labelText: '입력하세요',
+          ),
           onChanged: (text) {
             setDisplay(text);
           },

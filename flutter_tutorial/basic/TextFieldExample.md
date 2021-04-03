@@ -6,14 +6,19 @@
 
 ![](../images/TextFieldExample.jpg)
 
-- TextField의 파라메터로 onChanged 변수를 통해 이벤트 핸들러를 구현하여 입력값의 변화를 변수와 바인딩 할 수있다.
+- TextField의 파라메터로 onChanged 변수를 통해 이벤트 핸들러를 구현하여 입력값의 변화를 변수와 바인딩 할 수 있다.
+- decoration에 InputDecoration 값을 넘겨 입력화면을 꾸밀 수 있다.
     ~~~dart
     // TextField 예제
     TextField(
+      decoration: InputDecoration(
+        border: OutlineInputBorder(),
+        labelText: '입력하세요',
+      ),
       onChanged: (text) {
         setDisplay(text);
-      },
-    ),
+      },   
+    )
         
     ...
     
@@ -57,7 +62,3 @@
     }
     ~~~
 ![](../images/TextFieldExample2.jpg)
-
-- 입력 파라메터로 style에 TextStyle()을 넘겨주며 텍스트를 꾸민다.
-
-- TextStyle은 주로 글자크기와 색상을 지정할 때 사용한다.     
