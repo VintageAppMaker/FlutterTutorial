@@ -8,7 +8,22 @@
 
 - Scaffold 위젯 안에서...
 - **drawer**에 Drawer 위젯을 정의한다.
-- Drawer 위젯은 어떤 위젯을 만들어도 상관없으나 ListView 안에 DrawerHeader 위젯을 넣고 아래에 ListTile로 꾸미는 것이 일반적인 모습이다.
+
+~~~dart
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: sTitle,
+      home: Scaffold(
+        key: _scaffoldKey,            // ScaffoldState형의 GlobalKey를 넘긴다.
+        appBar: AppBar(title: Text(sTitle)),
+        body: buildMainPage(),
+        drawer: buildDrawer(context), // Widget을 넘긴다.
+      ),
+    );
+  }
+~~~
+- Drawer 위젯의 자식은 어떤 위젯을 만들어도 상관없으나 ListView 안에 DrawerHeader 위젯을 넣고 아래에 ListTile로 꾸미는 것이 일반적인 모습이다.
 - GlobalKey<ScaffoldState>로 정의된 변수에서 currentState.isDrawerOpen()을 이용하여 openEndDrawer(), openDrawer()를 사용하며 Drawer를 열고 닫을 수 있다.
 
 ~~~dart
