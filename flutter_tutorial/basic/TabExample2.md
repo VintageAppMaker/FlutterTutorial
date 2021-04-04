@@ -1,4 +1,4 @@
-### Tab 위젯
+### Tab 위젯 - 2 
 > Tab 위젯의 사용법 정리
 
 - [전체소스](../../lib/basic/TabExample2.dart)
@@ -9,7 +9,7 @@
 DefaultTabController을 사용하면서 TabPageSelector()를 사용하는 예제. 
 
 - DefaultTabController안에 Scaffold 위젯 안에서...
-  - **Context 변수를 사용해야 할 경우가 생기므로 Builder() 위젯을 생성**하고 child에 구현할 위젯을 정의한다. 
+  - **Context 변수를 사용해야 할 경우가 생기므로 Builder() 위젯을 생성**하고 builder에 구현할 위젯을 정의한다. 
   - TabPageSelector()를 이용하여 Selector를 구현한다.
   - TabBarView 위젯의 children에 상단탭 선택했을 때 표시되는 위젯을 리스트 형태로 정의한다.
   - Tab 이동은 DefaultTabController.of(context)로 객체를 가져와 객체.animateTo(인덱스)로 이동한다. 
