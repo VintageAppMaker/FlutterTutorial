@@ -18,7 +18,6 @@ Flutter와 Dart 개발을 위한 가이드
     - [예외, typedef](dart_tutorial/exception_typedef.md)
     
 - Flutter 배우기
-    - [빠르게 시작하기](flutter_tutorial/first.md)
     - [빠르게 구조파악](flutter_tutorial/start.md)
     - basic
       - [Text](flutter_tutorial/basic/TextExample.md)
@@ -26,6 +25,9 @@ Flutter와 Dart 개발을 위한 가이드
       - [Image](flutter_tutorial/basic/ImageExample.md)
       - [TextField](flutter_tutorial/basic/TextFieldExample.md)
       - [FormField](flutter_tutorial/basic/FormFieldExample.md)
+      - [Layout](flutter_tutorial/basic/LayoutExample.md)
 
 
 - 기본설정
+    - [빠르게 시작하기](flutter_tutorial/first.md)
+    
