@@ -108,3 +108,12 @@
     }  
     ~~~  
 
+5. flutter에서 State lifecycle은 다음과 같다. 
+   - initState() : **최초 1회 실행**. super.initState()를 반드시 실행.
+   - didChangeDependencies() : initState() 호출 후, 실행됨. Status와 연관된 데이터(InheritedWidget)가 변경되면 호출됨.
+   - build() : **화면구현**
+   - didUpdateWidget() : 화면갱신시 호출. 과거 위젯과의 변화를 비교가능.
+   - deactivate()
+   - dispose() : 메모리에서 삭제됨
+
+
