@@ -26,7 +26,7 @@ Flutter와 Dart 개발을 위한 가이드
       - [TextField](flutter_tutorial/basic/TextFieldExample.md)
       - [FormField](flutter_tutorial/basic/FormFieldExample.md)
       - [Layout](flutter_tutorial/basic/LayoutExample.md)
-      - [Layout](flutter_tutorial/basic/ListViewExample.md)
+      - [ListView](flutter_tutorial/basic/ListViewExample.md)
 
 
 - 기본설정
