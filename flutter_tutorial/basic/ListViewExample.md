@@ -36,7 +36,6 @@
 - buildListItem()은 내부에서 ListTile 위젯을 리턴한다.
 - ListTile 위젯은 리스트에서 흔히 보여지는 형태의 아이템을 미리구현한 템플릿 위젯이다.
 - title, subtitle, trailing에 원하는 위젯을 생성하며 사용할 수 있다.
-- 
     ~~~dart
     Widget buildListItem(List<String> lst, int index) {
       return ListTile(
