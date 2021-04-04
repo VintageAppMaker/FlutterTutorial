@@ -41,7 +41,7 @@
   ~~~
 
 - SizedBox 위젯은 주로 자식의 크기를 지정하거나 위젯간의 간격을 만들 때 사용된다. 
-- 때에 따라 Container를 사용하는 것이 효율때가 많다.
+- 때에 따라 Container를 사용하는 것이 효율적일 때가 많다.
 
   ~~~dart
   SizedBox buildSizedBox() {
