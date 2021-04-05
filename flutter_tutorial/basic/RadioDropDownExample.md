@@ -4,7 +4,7 @@
 - [전체소스](../../lib/basic/RadioDropdownExample.dart)
 - [dartpad로 실행하기](https://dartpad.dev/e9ea2f65aecfa85f65816dd783c48784?null_safety=false)
 
-![](../images/RadioDropDownExample.jpg)
+![](../images/RadioDropdownExample.jpg)
 
 - RadioListTile 위젯은 Radio를 구현하는 위젯이다. 
 - **value**에 true/false를 지정한다. 
