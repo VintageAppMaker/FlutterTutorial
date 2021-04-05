@@ -2,7 +2,7 @@
 > 위젯의 사용법 정리
 
 - [전체소스](../../lib/basic/CheckIndicatorExample.dart)
-- [dartpad로 실행하기](https://dartpad.dev/4c42c0ad2100ca04285c26946eed5f7e?null_safety=false)
+- [dartpad로 실행하기](https://dartpad.dev/e9ea2f65aecfa85f65816dd783c48784?null_safety=false)
 
 ![](../images/CheckboxIndicatorExample.jpg)
 
@@ -61,7 +61,7 @@
 
   ...
   
-  // Circular 형태 
+  // Circular 형태
   child: CircularProgressIndicator(
     value: 0.5,
   ),
