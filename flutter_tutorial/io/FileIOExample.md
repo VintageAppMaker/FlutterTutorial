@@ -6,6 +6,7 @@
 
 ![](../images/FileIOExample.jpg)
 
+- pubspec.yaml에 path_provider: ^1.6.24를 추가한다
 - File 처리는 비동기방식으로 해야 한다.
 - import 'package:path_provider/path_provider.dart'로 import 한다.
 - **getApplicationDocumentsDirectory**를 호출하여 디바이스 경로를 가져온다.
