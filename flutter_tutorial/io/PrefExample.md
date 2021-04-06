@@ -32,9 +32,9 @@
 ~~~dart
    ...
    _prefs.then((SharedPreferences prefs) {
-      setState(() {
-        _str = prefs.getString(prefFIELD) ?? "";
-      });
+     prefs.setString(prefFIELD, text).then((bool success) {
+       print("success");
+     });
    });
    ...
 ~~~
