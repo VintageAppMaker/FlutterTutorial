@@ -8,9 +8,8 @@
 
 - Inherited Widget로 정의된 위젯의 자식 위젯(child)에게 상태를 공유할 수 있다.
 - 주로 외부에서 정의된 변수값이나 함수를 바인딩하는 목적으로 사용한다.
-- 이 때, 키값이 없는 위젯은 잘못된 매칭으로 재대로 갱신되지 못한다.
 - of(BuildContext context)와 updateShouldNotify(covariant RootState oldWidget)를 오버라이드 한다.
-- updateShouldNotify의 경우, 갱신조건을 처리한다. oldWidget은 updateShouldNotify()를 실행하기 이전 객체정보이다. 이곳에서 특정 필드값이 변경되면 실행할 수 있도록 프로그래밍이 가능하다.
+- updateShouldNotify의 경우, 갱신조건을 처리한다. oldWidget은 updateShouldNotify()를 실행하기 이전 객체정보이다. 이곳에서 특정 필드값이 변경되면 갱신할 수 있도록 프로그래밍이 가능하다.
 
 ~~~dart
   ...
