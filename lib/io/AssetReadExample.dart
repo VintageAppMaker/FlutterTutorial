@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'dart:async';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class AssetReadExample extends StatefulWidget {
   @override
@@ -13,7 +11,6 @@ class _AssetReadState extends State<AssetReadExample> {
 
   // TextField의 컨트롤러 선언
   final editController = TextEditingController();
-  static String prefFIELD = "lastname";
   @override
   void initState() {
     super.initState();
@@ -27,7 +24,7 @@ class _AssetReadState extends State<AssetReadExample> {
     });
   }
 
-  String sTitle = "16. Preference ";
+  String sTitle = "17. Asset 읽기 ";
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

@@ -40,6 +40,7 @@ Flutter와 Dart 개발을 위한 가이드
     - IO
       - [File](flutter_tutorial/io/FileIOExample.md)
       - [Pref](flutter_tutorial/io/PrefExample.md)
+      - [Asset](flutter_tutorial/io/AssetReadExample.md)
 
 - 기본설정
     - [빠르게 시작하기](flutter_tutorial/first.md)
