@@ -36,7 +36,7 @@
     }
     ~~~
     
-    - **StatelessWidget**은 상태를 관리하지 않는 Widget으로 값이 변경되어도 화면에 갱신되지 않는다. 
+    - **StatelessWidget**은 상태를 관리하지 않는 Widget이다. 자신의 위젯 안에서 상태(데이터 변경)를 변경할 수 없다.
     - 반대로 **StatefulWidgetd**은 상태가 변하면(데이터 변경) Widget들의 화면을 갱신할 때 사용한다.  
 
 3. build 메소드에서 MaterialApp으로 반환 

@@ -50,7 +50,6 @@ class RootPage extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         key: UniqueKey(),
 
-        // `context.read`를 호출하면 화면 rebuild를 하지않는다.
         onPressed: () => context.read<Counter>().increment(),
         child: const Icon(Icons.add),
       ),
