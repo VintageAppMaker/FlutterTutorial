@@ -4,6 +4,8 @@
 - [전체소스](../../lib/io/HTMLParserExample.dart)
 - [dartpad로 실행하기](#) - DartPad에서 지원안함. 실행안됨.
 
+![](../images/HTMLParserExample.jpg)
+
 - import 'package:html/parser.dart' as html_parser;로 import
 - final document = html_parser.parse(response.body);로 HTML 파싱
 - 원하는 DOM을 getElementsByClassName(클래스명)으로 가져올 수 있다.

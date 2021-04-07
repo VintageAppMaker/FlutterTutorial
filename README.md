@@ -42,7 +42,7 @@ Flutter와 Dart 개발을 위한 가이드
       - [Pref](flutter_tutorial/io/PrefExample.md)
       - [Asset](flutter_tutorial/io/AssetReadExample.md)
       - [HTTP](flutter_tutorial/io/HttpSimple.md)
-      - [HTTP](flutter_tutorial/io/HttpJsonExample.md)
+      - [HTTP2](flutter_tutorial/io/HttpJsonExample.md)
       - [HTML](flutter_tutorial/io/HTMLParserExample.md)
 
 - 기본설정
