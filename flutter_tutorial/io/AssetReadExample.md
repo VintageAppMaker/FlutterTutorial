@@ -1,4 +1,4 @@
-### Prefernce
+### Asset
 > Flutter에서 Asset 읽어오기
 
 - [전체소스](../../lib/io/AssetReadExample.dart)
