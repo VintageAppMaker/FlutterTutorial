@@ -4,7 +4,7 @@ import 'package:FlutterTutorial/advance/StaggeredGridViewExample.dart';
 import 'package:FlutterTutorial/io/AssetReadExample.dart';
 import 'package:FlutterTutorial/io/HTMLParserExample.dart';
 import 'package:FlutterTutorial/route.dart';
-import 'package:FlutterTutorial/steatemanagement/StreamBuilderExample.dart';
+import 'package:FlutterTutorial/statemanagement/StreamBuilderExample.dart';
 import 'package:flutter/material.dart';
 import 'advance/BackPressedExample.dart';
 import 'advance/ChannelExample.dart';
@@ -14,15 +14,15 @@ import 'advance/ShareExample.dart';
 import 'advance/SliverExample.dart';
 import 'advance/ThemeExample.dart';
 import 'advance/WebViewExample.dart';
-import 'steatemanagement/KeyExample.dart';
+import 'statemanagement/KeyExample.dart';
 import "io/FileIOExample.dart";
 import 'io/HttpJsonExample.dart';
 import 'io/HttpSimple.dart';
 import "io/PrefExample.dart";
 import 'package:flutter/services.dart';
-import 'steatemanagement/ProviderExample.dart';
+import 'statemanagement/ProviderExample.dart';
 
-import 'steatemanagement/InheritedWidgetExample.dart';
+import 'statemanagement/InheritedWidgetExample.dart';
 
 void main() {
   runApp(MyApp());
