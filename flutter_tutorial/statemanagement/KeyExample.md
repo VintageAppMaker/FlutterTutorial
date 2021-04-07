@@ -22,7 +22,7 @@
   
 ~~~
 
-- Child Widget에서 부모위젯의 정보를 이용해야 할 경우는 GlobarKey()를 이용한다.
+- Child Widget에서 부모위젯의 정보를 이용해야 할 경우, 또는 다른위젯과 정보를 공유해야 할 때는 GlobalKey()를 이용한다.
 - GlobalKey<_ChildState> _ChildState1;
 - 그리고 자식위젯을 생성시에 Key 값으로 넘긴다.
 ~~~dart
