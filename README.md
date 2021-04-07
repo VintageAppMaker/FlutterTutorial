@@ -49,6 +49,7 @@ Flutter와 Dart 개발을 위한 가이드
       - [Key](flutter_tutorial/statemanagement/KeyExample.md)
       - [InheritedWidget](flutter_tutorial/statemanagement/InheritedWidgetExample.md)
       - [Provider](flutter_tutorial/statemanagement/ProviderExample.md)
+      - [Provider](flutter_tutorial/statemanagement/StreamBuilderExample.md)
 
 - 기본설정
     - [빠르게 시작하기](flutter_tutorial/first.md)
