@@ -51,7 +51,8 @@ Flutter와 Dart 개발을 위한 가이드
       - [Provider](flutter_tutorial/statemanagement/ProviderExample.md)
       - [StreamBuilder](flutter_tutorial/statemanagement/StreamBuilderExample.md)
 
-    -  etc
+
+    - etc
       - [RefreshIndicator](flutter_tutorial/etc/RefreshIndicatorExample.md)
       - [StaggeredGridView](flutter_tutorial/etc/StaggeredGridViewExample.md)
       - [HorizontalListExample](flutter_tutorial/etc/HorizontalListViewExample.md)
