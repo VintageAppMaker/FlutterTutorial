@@ -1,3 +1,22 @@
+### PageView
+> Flutter에서 PageView를 이용한 가로스크롤 화면
+
+- [전체소스](../../lib/advance/HorizontalListExample.dart)
+- [dartpad로 실행하기](#) - Dartpad 지원안함
+
+![](../images/HorizontalListExample.jpg)
+
+- PageView 위젯의 builder에서 화면을 구성한다.
+  - controller는 화면에 보여줄 Item의 간격을 조절한다.
+  - crossAxisSpacing, mainAxisSpacing는 Item간의 간격이다.
+  - onPageChanged는 viewport가 변경될 시( 중앙에 보이는 아이템이 이동시 ) 발생된다. (int index){} 함수를 구현하여 상태를 처리한다.
+  - itemBuilder는 (_, i) { returnb 위젯}형의 함수로 Item 화면을 그린다. 이 예제에서는 Transform.scale를 이용하여 비율을 정한다.
+  - Transform.scale에서
+    - scale은 비율이다.
+    - child는 비율을 적용할 위젯이다.
+
+
+~~~ dart
 import 'package:flutter/material.dart';
 
 class HorizontalListExample extends StatefulWidget {
@@ -55,3 +74,4 @@ class _HorizontalListExampleState extends State<HorizontalListExample> {
 
 
 }
+~~~

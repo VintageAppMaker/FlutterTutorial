@@ -54,6 +54,8 @@ Flutter와 Dart 개발을 위한 가이드
     - StateManagement
       - [RefreshIndicator](flutter_tutorial/etc/RefreshIndicatorExample.md)
       - [StaggeredGridView](flutter_tutorial/etc/StaggeredGridViewExample.md)
+      - [HorizontalListExample](flutter_tutorial/etc/HorizontalListViewExample.md)
+
 
 - 기본설정
     - [빠르게 시작하기](flutter_tutorial/first.md)
