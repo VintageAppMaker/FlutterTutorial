@@ -16,6 +16,8 @@
     - result.success(리턴값)을 통해 값을 리턴한다.
   - 코틀린에서 dart(flutter) 함수를 호출하고자 한다면, MethodChannel로 선언된 객체의 invokeMethod(함수명, 파라메터)를 통해 호출할 수 있다.
 
+
+MainActivity.kt
 ~~~kotlin
   
 package com.example.FlutterTutorial
@@ -64,6 +66,7 @@ class MainActivity: FlutterActivity() {
 - Native에 정의된 함수를 호출하려면 invokeMethod(함수명, 파라메터) 메소드를 사용한
 - Native에서 flutter 함수를 호출할 수 있게 setMethodCallHandler() 함수를 구현한다. Future<dynamic> (MethodCall call) 형이다. 그러므로 리턴값으로 native에 값을 전달할 수도 있다.
 
+ChannelExample.dart
 ~~~ dart
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
