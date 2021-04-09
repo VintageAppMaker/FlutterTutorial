@@ -11,7 +11,7 @@
   - onPageChanged는 viewport가 변경될 시( 중앙에 보이는 아이템이 이동시 ) 발생된다. (int index){} 함수를 구현하여 상태를 처리한다.
   - itemBuilder는 (_, i) { returnb 위젯}형의 함수로 Item 화면을 구현한다.
   - CirclePageIndicator()는 PageView의 이동을 표시하기 위해 사용한다.
-    - currentPageNotifier는 Page가 변경될 시 처리하는 Notfier이다(이곳에서는 _currentPageNotifier 변수를 넘김).
+    - currentPageNotifier는 Page가 변경될 시 처리하는 ChangeNotfier이다(이곳에서는 _currentPageNotifier 변수를 넘김).
     - final _currentPageNotifier = ValueNotifier<int>(0);와 같이 사용하며 setState() 없이도 값을 넣으면 widget에서 변경된다.
     - ex) _currentPageNotifier.value = index; // setState없이 CirclePageIndicator가 변한다.
 
