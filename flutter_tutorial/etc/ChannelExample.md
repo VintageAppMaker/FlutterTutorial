@@ -1,7 +1,7 @@
 ### Channel
 > Flutter에서 각 환경(iOS, Android, Desktop)의 Native 기능을 사용하려면 channel 프로그래밍을 통해 통신할 수 있다.
 
-- [전체소스](../../lib/advance/ChannelExample.dart)
+- [flutter 전체소스](../../lib/advance/ChannelExample.dart)
 - [Android 소스](../../android/app/src/main/kotlin/com/example/FlutterTutorial/MainActivity.kt)
 - [dartpad로 실행하기](#) - Dartpad 지원안함
 
@@ -15,7 +15,6 @@
     - call.method로 호출한 함수명을 비교한다.
     - result.success(리턴값)을 통해 값을 리턴한다.
   - 코틀린에서 dart(flutter) 함수를 호출하고자 한다면, MethodChannel로 선언된 객체의 invokeMethod(함수명, 파라메터)를 통해 호출할 수 있다.
-
 
 MainActivity.kt
 ~~~kotlin
