@@ -371,6 +371,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.0"
+  syntax_highlighter:
+    dependency: "direct main"
+    description:
+      name: syntax_highlighter
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.1"
   term_glyph:
     dependency: transitive
     description:
