@@ -10,8 +10,6 @@ class AssetReadExample extends StatefulWidget {
 class _AssetReadState extends State<AssetReadExample> {
   String _str = "";
 
-  // TextField의 컨트롤러 선언
-  final editController = TextEditingController();
   @override
   void initState() {
     super.initState();
