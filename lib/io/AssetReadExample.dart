@@ -35,19 +35,29 @@ class _AssetReadState extends State<AssetReadExample> {
       title: sTitle,
       home: Scaffold(
           appBar: AppBar(title: Text(sTitle)),
-          body: SingleChildScrollView(
-            child: Center(
+          body: Padding(
+            padding: EdgeInsets.all(10),
+            child: buildDartSourcellView(style),
+          )
+      ),
+    );
+  }
+
+  SingleChildScrollView buildDartSourcellView(SyntaxHighlighterStyle style) {
+    return SingleChildScrollView(
+            scrollDirection: Axis.vertical,
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
               child: RichText(
                 text: TextSpan(
                   style:
-                      const TextStyle(fontFamily: 'monospace', fontSize: 14.0),
+                  const TextStyle(fontFamily: 'monospace', fontSize: 12.0),
                   children: <TextSpan>[
                     DartSyntaxHighlighter(style).format(_str),
                   ],
                 ),
               ),
             ),
-          )),
-    );
+          );
   }
 }
