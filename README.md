@@ -67,4 +67,25 @@ Flutter와 Dart 개발을 위한 가이드
 
 - 기본설정
     - [빠르게 시작하기](flutter_tutorial/first.md)
+
+
+----
+
+#### Flutter v2.10 migration
+> Android에서 수정할 내용 정리
+
+1.AndroidManifest.xml에서 이름변경
+~~~
+<application
+        android:name="${applicationName}"
     
+~~~
+
+2.AndroidStudio의 하단 터미널에서 커맨드 입력
+~~~
+flutter upgrade
+flutter pub upgrade
+flutter pub outdated
+~~~
+
+3. 몇몇 플러그인들은 구조가 바뀌어서 코드수정이 필요함.

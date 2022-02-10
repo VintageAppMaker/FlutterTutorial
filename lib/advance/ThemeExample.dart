@@ -54,7 +54,7 @@ class CustomTheme {
   static ThemeData get lightTheme {
     return ThemeData(
         appBarTheme: AppBarTheme(backgroundColor: Colors.white),
-        textTheme: TextTheme(body1: TextStyle(color: Colors.grey), body2: TextStyle(color: Colors.grey)),
+        textTheme: TextTheme(bodyLarge: TextStyle(color: Colors.grey), bodyMedium: TextStyle(color: Colors.grey)),
         scaffoldBackgroundColor: Colors.white,
         buttonTheme: ButtonThemeData(
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
@@ -68,7 +68,7 @@ class CustomTheme {
   static ThemeData get redTheme {
     return ThemeData(
         appBarTheme: AppBarTheme(backgroundColor: Colors.amber),
-        textTheme: TextTheme(body1: TextStyle(color: Colors.white)),
+        textTheme: TextTheme(bodyMedium: TextStyle(color: Colors.white)),
         scaffoldBackgroundColor: Colors.red,
         buttonTheme: ButtonThemeData(
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(28.0)),
