@@ -88,4 +88,35 @@ flutter pub upgrade
 flutter pub outdated
 ~~~
 
-3. 몇몇 플러그인들은 구조가 바뀌어서 코드수정이 필요함.
+3. 몇몇 플러그인들은 구조가 바뀌어서 코드수정 및 삭제가 필요함.
+4. app의 Gradle 정보를 수정해야 함
+~~~
+android {
+   ...
+    defaultConfig {
+        ...
+        // v2.10용 추가
+        minSdkVersion 19
+        compileSdkVersion 31
+    }
+
+   
+}
+~~~
+5. (android) project의 gradle 정보에서 kotlin 버전정보를 1.6.10 이상으로 설정
+~~~
+buildscript {
+    ext.kotlin_version = '1.6.10'
+    ... 
+}
+~~~
+6. Gradle 버전을 6.1.1 이상으로 설정( gradle-wrapper.properties )
+~~~
+#Fri Jun 23 08:50:38 CEST 2017
+distributionBase=GRADLE_USER_HOME
+distributionPath=wrapper/dists
+zipStoreBase=GRADLE_USER_HOME
+zipStorePath=wrapper/dists
+distributionUrl=https\://services.gradle.org/distributions/gradle-6.1.1-all.zip
+
+~~~

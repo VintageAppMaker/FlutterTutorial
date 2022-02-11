@@ -39,7 +39,10 @@ android {
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.example.FlutterTutorial"
-        minSdkVersion 17
+        // v2.10용 추가
+        minSdkVersion 19
+        compileSdkVersion 31
+
         targetSdkVersion 28
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
