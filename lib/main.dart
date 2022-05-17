@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:FlutterTutorial/advance/HorizontalListExample.dart';
 import 'package:FlutterTutorial/advance/RefreshIndicatorExample.dart';
 import 'package:FlutterTutorial/advance/StaggeredGridViewExample.dart';
@@ -34,6 +36,7 @@ class MyApp extends StatelessWidget {
     // 전체화면 만들기
     SystemChrome.setEnabledSystemUIOverlays([]);
     return MaterialApp(
+      scrollBehavior: DeskScrollBehavior(),
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -243,4 +246,13 @@ class _MainPageState extends State<MainPage> {
       ), //Container
     );
   }
+}
+
+// 웹과 desktop에서 모바일처럼 터치 스크롤 지원하기 위함
+class DeskScrollBehavior extends MaterialScrollBehavior {
+  @override
+  Set<PointerDeviceKind> get dragDevices => {
+    PointerDeviceKind.touch,
+    PointerDeviceKind.mouse,
+  };
 }
