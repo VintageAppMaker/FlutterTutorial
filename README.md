@@ -120,3 +120,6 @@ zipStorePath=wrapper/dists
 distributionUrl=https\://services.gradle.org/distributions/gradle-6.1.1-all.zip
 
 ~~~
+
+#### Flutter v3.0 migration
+> OutlineButton에서 에러발생하여 주석처리  
