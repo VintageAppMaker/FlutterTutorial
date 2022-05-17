@@ -124,5 +124,7 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-6.1.1-all.zip
 #### Flutter v3.0 migration
 > OutlineButton에서 에러발생하여 주석처리
 ~~~
-타겟변경후 컴파일시 package name 에러가 발생한다면 프로젝트 폴더를 무조건 소문자로 변경해야 한다.
+1. 타겟변경후 컴파일시 package name 에러가 발생한다면 프로젝트 폴더를 무조건 소문자로 변경해야 한다.
+2. window의 경우 개발자 모드로 설정 요구함(콘솔에서 입력)
+start ms-settings:developers
 ~~~
