@@ -39,12 +39,12 @@ class ButtonExample extends StatelessWidget {
                   '3. FlatButton',
                   style: TextStyle(color: Colors.red, fontSize: 30),
                 ))),
-        OutlineButton(
-            color: Colors.red,
-            textColor: Colors.redAccent,
-            child: Text("4. Outline Button"),
-            onPressed: null,
-            borderSide: BorderSide(width: 0.7, color: Colors.red)),
+        // OutlineButton(
+        //     color: Colors.red,
+        //     textColor: Colors.redAccent,
+        //     child: Text("4. Outline Button"),
+        //     onPressed: null,
+        //     borderSide: BorderSide(width: 0.7, color: Colors.red)),
 
         FloatingActionButton.extended(
           backgroundColor: const Color(0xffFFFF06),
