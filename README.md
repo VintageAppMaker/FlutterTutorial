@@ -1,6 +1,6 @@
 # FlutterTutorial
 
-Flutter와 Dart 개발을 위한 가이드
+> Flutter와 Dart 개발을 위한 가이드. dart 2.12 이전버전 문법. **vscode로 빌드 시**, 하위버전이라도 전혀 문제없음.
 
 ![](intro.gif)
 
@@ -18,6 +18,7 @@ Flutter와 Dart 개발을 위한 가이드
     - [비동기 - Stream](dart_tutorial/async_stream.md)
     - [비동기 - future](dart_tutorial/async_future.md)
     - [예외, typedef](dart_tutorial/exception_typedef.md)
+    - [dart 2.12 이상부터 nullsafety 적용됨](https://dartpad.dev/323236c2909a139c59791b3deb7124f3)
     
 - Flutter 배우기
     - [빠르게 구조파악](flutter_tutorial/start.md)
