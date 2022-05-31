@@ -10,7 +10,9 @@
 
 void main() {
   // List
-  var lst = List();
+  //var lst = List();
+  var lst = List.empty(growable: true);
+  
   lst.add("1");
   lst.add(1);
   print(lst);

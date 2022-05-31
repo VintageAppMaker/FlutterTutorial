@@ -7,7 +7,7 @@
 
 1. List(), [] 로 객체생성
 ~~~dart
-  var lst = List();
+  var lst = List.empty(growable: true);
   lst.add("1");
   lst.add(1);
   print (lst);
