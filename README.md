@@ -73,7 +73,7 @@
 ----
 
 #### Flutter v2.10 migration
-> Android에서 수정할 내용 정리. dart 2.17부터는 null safety 지원으로 인한 언어변화가 많았음.
+> Android에서 수정할 내용 정리. dart 2.12부터는 null safety 지원으로 인한 언어변화가 많았음.
 
 1.AndroidManifest.xml에서 이름변경
 ~~~
