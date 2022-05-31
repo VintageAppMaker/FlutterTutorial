@@ -28,5 +28,5 @@
       _age = n;
   }
 ~~~
-6. private/public 키워드없음. 이름에 _(언더스코어)를 쓰면 private으로 한다고 하지만, 외부사용은 가능함.
+6. private/public 키워드없음. 이름에 _(언더스코어)를 쓰면 private.
 7. 상속은 extends
