@@ -73,7 +73,7 @@
 ----
 
 #### Flutter v2.10 migration
-> Android에서 수정할 내용 정리
+> Android에서 수정할 내용 정리. dart 2.17부터는 null safety 지원으로 인한 언어변화가 많았음.
 
 1.AndroidManifest.xml에서 이름변경
 ~~~
@@ -129,3 +129,13 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-6.1.1-all.zip
 2. window의 경우 개발자 모드로 설정 요구함(콘솔에서 입력)
 start ms-settings:developers
 ~~~
+
+#### Flutter 개발환경 핫키(Android Studio)
+> 위젯을 감싸고 제거하고, 함수로 만들고 할 때 유용한 키
+
+~~~
+- 위젯 감싸기 또는 제거하기 : alt + enter
+- 들여쓰기 정리하기  : ctrl + alt + l
+- 범위로 선택한 코드를 함수 또는 위젯 만들기 :  ctrl + alt + m
+~~~
+
