@@ -67,7 +67,7 @@ class _MainPageState extends State<MainPage> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          buildHeaderBanner("basic", "1","기본위젯", "빈번하게 사용되는 위젯과 기초지식"),
+          buildHeaderBanner("basic", "1", "기본위젯", "빈번하게 사용되는 위젯과 기초지식"),
           buildContentItem(
               context, "/TextExample", "1. Text 예제", "Text 사용법을 정리합니다."),
           buildContentItem(
@@ -100,7 +100,7 @@ class _MainPageState extends State<MainPage> {
           buildContentItem(context, "/CupertinoExample", "14. Cupertino 예제",
               "Cupertino 사용법을 정리합니다."),
           buildHeaderBanner(
-              "Utility", "2","File, Pref, Network", "파일관리 및 네트워크 예제"),
+              "Utility", "2", "File, Pref, Network", "파일관리 및 네트워크 예제"),
           buildContentItem2(context, FileIOExample(storage: FileHelper()),
               "15. File I/O 예제", "File Read/Write를 정리합니다."),
           buildContentItem2(context, PrefExample(), "16. Preference 예제",
@@ -113,7 +113,7 @@ class _MainPageState extends State<MainPage> {
               "json 배열처리 플러터 공식예제(pub.dev) 2"),
           buildContentItem2(
               context, HTMLParserExample(), "20. HTMLParser 예제", "html 파싱"),
-          buildHeaderBanner("state", "3",  "상태관리", "key, Stream, Provider 활용"),
+          buildHeaderBanner("state", "3", "상태관리", "key, Stream, Provider 활용"),
           buildContentItem2(
               context, KeyExample(), "21. Key 예제", "key에 대한 기초예제"),
           buildContentItem2(context, InWidgetExample(),
@@ -122,7 +122,7 @@ class _MainPageState extends State<MainPage> {
               "InheritedWidget보다 쉽고 강력해진 기능"),
           buildContentItem2(context, StreamBuilderExample(),
               "24. StreamBuilder & HTTP 예제", "StreamBuilder를 이용한 비동기통신 "),
-          buildHeaderBanner("etc", "4","기타", "기타 위젯 및 기능"),
+          buildHeaderBanner("etc", "4", "기타", "기타 위젯 및 기능"),
           buildContentItem2(context, RefreshIndicatorExample(),
               "25. RefreshIndicator 예제", "화면을 pulldown하여 리스트 갱신"),
           buildContentItem2(context, StaggeredExample(),
@@ -131,8 +131,8 @@ class _MainPageState extends State<MainPage> {
               "27. Horizontal List 예제", "Horizontal List 사용법"),
           buildContentItem2(
               context, SliverExample(), "28. Sliver 예제", "Sliver 사용법"),
-          buildContentItem2(
-              context, PermissionExample(), "29. Permission 예제", "Native인 Android 소스수정이 필요"),
+          buildContentItem2(context, PermissionExample(), "29. Permission 예제",
+              "Native인 Android 소스수정이 필요"),
           buildContentItem2(
               context, ShareExample(), "30. Share 예제", "Share 기능설명"),
           buildContentItem2(
@@ -141,11 +141,10 @@ class _MainPageState extends State<MainPage> {
               context, ThemeExample(), "32. Theme 예제", "Native와 통신"),
           buildContentItem2(
               context, PageViewExample(), "33. PageView 예제", "PageView 예제"),
-          buildContentItem2(
-              context, WebViewExample(), "34. WebView 예제", "WebView 공식예제(pub.dev)"),
-          buildContentItem2(
-              context, BackPressedExample(), "35. BackPressed 예제", "BackPressed 기능설명")
-
+          buildContentItem2(context, WebViewExample(), "34. WebView 예제",
+              "WebView 공식예제(pub.dev)"),
+          buildContentItem2(context, BackPressedExample(), "35. BackPressed 예제",
+              "BackPressed 기능설명")
         ],
       ),
     );
@@ -200,7 +199,8 @@ class _MainPageState extends State<MainPage> {
     );
   }
 
-  Widget buildHeaderBanner(String sBanner, String sNumber, String sTitle, String sSubTitle) {
+  Widget buildHeaderBanner(
+      String sBanner, String sNumber, String sTitle, String sSubTitle) {
     return Banner(
       message: sBanner,
       textStyle: TextStyle(color: Colors.red),
@@ -210,38 +210,51 @@ class _MainPageState extends State<MainPage> {
         width: double.infinity,
         child: Card(
           color: Colors.red,
-          child: Padding( padding: EdgeInsets.all(10), child: Column(
-            children: <Widget>[
-              SizedBox(height: 5,),
-              Row(children: [
-                Expanded(flex: 1, child: SizedBox(width: double.infinity) ),
-                SizedBox(
-                  height: 30,
-                  child: CircleAvatar(
-                    backgroundColor: Colors.white,
-                    child: Text('$sNumber'),
+          child: Padding(
+              padding: EdgeInsets.all(10),
+              child: Column(
+                children: <Widget>[
+                  SizedBox(
+                    height: 5,
                   ),
-                )
-              ],),
-              SizedBox(width: double.infinity, child: Text(
-                sTitle,
-                textAlign: TextAlign.end,
-                style: TextStyle(
-                    color: Color.fromRGBO(0xFF, 0xFF, 0xFF, 1),
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold), //TextStyle
-              ),),
-              SizedBox(width: double.infinity, child: Text(
-                sSubTitle,
-                textAlign: TextAlign.end,
-                style: TextStyle(
-                    color: Color.fromRGBO(0xFF, 0xFF, 0xF3, 0.8),
-                    fontSize: 12,
-                    fontWeight: FontWeight.bold), //TextStyle
-              ),), //Text
-              SizedBox(height: 10),
-            ], //<Widget>[]
-          )), //Column
+                  Row(
+                    children: [
+                      Expanded(
+                          flex: 1, child: SizedBox(width: double.infinity)),
+                      SizedBox(
+                        height: 30,
+                        child: CircleAvatar(
+                          backgroundColor: Colors.white,
+                          child: Text('$sNumber'),
+                        ),
+                      )
+                    ],
+                  ),
+                  SizedBox(
+                    width: double.infinity,
+                    child: Text(
+                      sTitle,
+                      textAlign: TextAlign.end,
+                      style: TextStyle(
+                          color: Color.fromRGBO(0xFF, 0xFF, 0xFF, 1),
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold), //TextStyle
+                    ),
+                  ),
+                  SizedBox(
+                    width: double.infinity,
+                    child: Text(
+                      sSubTitle,
+                      textAlign: TextAlign.end,
+                      style: TextStyle(
+                          color: Color.fromRGBO(0xFF, 0xFF, 0xF3, 0.8),
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold), //TextStyle
+                    ),
+                  ), //Text
+                  SizedBox(height: 10),
+                ], //<Widget>[]
+              )), //Column
         ), //Padding
       ), //Container
     );
@@ -252,7 +265,7 @@ class _MainPageState extends State<MainPage> {
 class DeskScrollBehavior extends MaterialScrollBehavior {
   @override
   Set<PointerDeviceKind> get dragDevices => {
-    PointerDeviceKind.touch,
-    PointerDeviceKind.mouse,
-  };
+        PointerDeviceKind.touch,
+        PointerDeviceKind.mouse,
+      };
 }
