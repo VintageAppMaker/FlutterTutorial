@@ -59,10 +59,10 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: SingleChildScrollView(child: buildCenter(context)));
+    return Scaffold(body: SingleChildScrollView(child: buildMain(context)));
   }
 
-  Center buildCenter(BuildContext context) {
+  Center buildMain(BuildContext context) {
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
