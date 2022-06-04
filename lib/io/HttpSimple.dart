@@ -21,11 +21,11 @@ Future<Album> fetchAlbum() async {
 }
 
 class Album {
-  final int userId;
-  final int id;
-  final String title;
+  final int? userId;
+  final int? id;
+  final String? title;
 
-  Album({@required this.userId, @required this.id, @required this.title});
+  Album({required this.userId, required this.id, required this.title});
 
   factory Album.fromJson(Map<String, dynamic> json) {
     return Album(
@@ -38,14 +38,14 @@ class Album {
 
 
 class HttpSimpleExample extends StatefulWidget {
-  HttpSimpleExample({Key key}) : super(key: key);
+  HttpSimpleExample({Key? key}) : super(key: key);
 
   @override
   _HttpSimpleExampleState createState() => _HttpSimpleExampleState();
 }
 
 class _HttpSimpleExampleState extends State<HttpSimpleExample> {
-  Future<Album> futureAlbum;
+  Future<Album>? futureAlbum;
 
   @override
   void initState() {
@@ -69,7 +69,7 @@ class _HttpSimpleExampleState extends State<HttpSimpleExample> {
             future: futureAlbum,
             builder: (context, snapshot) {
               if (snapshot.hasData) {
-                return Text(snapshot.data.title);
+                return Text(snapshot.data!.title!);
               } else if (snapshot.hasError) {
                 return Text("${snapshot.error}");
               }

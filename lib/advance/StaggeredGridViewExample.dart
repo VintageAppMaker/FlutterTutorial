@@ -1,8 +1,9 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:transparent_image/transparent_image.dart';
-
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+// plugin 업그레이드하면서 메소드와 구조가 변경됨
+// 마땅한 도큐먼트도 제공되고 있지않음.
 
 class StaggeredExample extends StatefulWidget {
   @override
@@ -34,32 +35,37 @@ class _StaggeredExampleState extends State<StaggeredExample> {
       appBar: AppBar(
         title: new Text("24. RefreshIndicator 예제"),
       ),
-      body: StaggeredGridView.countBuilder(
+      body: GridView.custom(
+        gridDelegate: SliverWovenGridDelegate.count(
           crossAxisCount: 2,
-          crossAxisSpacing: 10,
-          mainAxisSpacing: 12,
-          itemCount: imageList.length,
-          itemBuilder: (context, index) {
-            return Container(
-              decoration: BoxDecoration(
-                  color: Colors.transparent,
-                  borderRadius: BorderRadius.all(
-                      Radius.circular(5))
+          mainAxisSpacing: 8,
+          crossAxisSpacing: 8,
+          pattern: [
+            WovenGridTile(1),
+            WovenGridTile(
+              5 / 7,
+              crossAxisRatio: 0.9,
+              alignment: AlignmentDirectional.centerEnd,
+            ),
+          ],
+        ),
+        childrenDelegate: SliverChildBuilderDelegate(
+          (context, index) => Container(
+            decoration: BoxDecoration(
+                color: Colors.transparent,
+                borderRadius: BorderRadius.all(Radius.circular(5))),
+            child: ClipRRect(
+              borderRadius: BorderRadius.all(Radius.circular(5)),
+              child: FadeInImage.memoryNetwork(
+                placeholder: kTransparentImage,
+                image: imageList[index],
+                fit: BoxFit.cover,
               ),
-              child: ClipRRect(
-                borderRadius: BorderRadius.all(
-                    Radius.circular(5)),
-                child: FadeInImage.memoryNetwork(
-                  placeholder: kTransparentImage,
-                  image: imageList[index],fit: BoxFit.cover,),
-              ),
-            );
-          },
-          staggeredTileBuilder: (index) {
-            return StaggeredTile.count(1, index.isEven ? 1 : 1.8);
-          }),
+            ),
+          ),
+          childCount: imageList.length
+        ),
+      ),
     );
   }
-
-
 }

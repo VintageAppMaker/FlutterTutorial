@@ -3,37 +3,41 @@ import 'package:permission_handler/permission_handler.dart';
 
 // 1. AndroidManifest.xml에 퍼미션 추가 필수
 // 2. 플러그인 추가 => permission_handler: ^3.2.2
+
+//* null safety 적용이후, 플러그인 구조가 변경됨.
+
 class PermissionExample extends StatefulWidget {
   @override
   PermissionExampleState createState() => PermissionExampleState();
 }
 
 class PermissionExampleState extends State<PermissionExample> {
-  String sResult = "결과";
+  PermissionStatus _permissionStatus = PermissionStatus.denied;
 
   @override
   void initState() {
     super.initState();
   }
 
-  void checkPermissionResult(PermissionGroup perm) {
-    Future<PermissionStatus> status =
-    PermissionHandler().checkPermissionStatus(perm);
-    status.then((PermissionStatus status) {
-      if ( status != PermissionStatus.granted) return;
-      setState(() {
-        sResult = "인증되었습니다";
-      });
+  Future<void> checkPermissionResult(Permission permission) async {
+    final status = await permission.request();
+
+    setState(() {
+      _permissionStatus = status;
+
     });
   }
 
-  Future requestPermission(List <PermissionGroup> perm) async {
-    await PermissionHandler().requestPermissions(perm);
+  Future requestPermission(Permission permission) async {
+    final status = await permission.request();
+    setState(() {
+      _permissionStatus = status;
+    });
   }
 
-  void processPermission() async{
-    await requestPermission([PermissionGroup.phone]);
-    await checkPermissionResult(PermissionGroup.phone);
+  void processPermission() async {
+    await requestPermission(Permission.phone);
+    await checkPermissionResult(Permission.phone);
   }
 
   @override
@@ -52,24 +56,30 @@ class PermissionExampleState extends State<PermissionExample> {
           ),
           body: Scaffold(
               body: Center(
-                child: Column(
-                  children: [
-                    SizedBox(height: 20,),
-                    Text(sResult, style: TextStyle(fontSize: 30, color: Colors.red),),
-                    SizedBox(height: 20,),
-                    FloatingActionButton.extended(
-                      backgroundColor: Colors.red,
-                      foregroundColor: Colors.white,
-                      onPressed: () {
-                        processPermission();
-                      },
-                      icon: Icon(Icons.android),
-                      label: Text('퍼미션 채크'),
-                    )],
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 20,
                 ),
-              )
-          ),
-        )
-    );
+                Text(
+                  _permissionStatus.toString(),
+                  style: TextStyle(fontSize: 30, color: Colors.red),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                FloatingActionButton.extended(
+                  backgroundColor: Colors.red,
+                  foregroundColor: Colors.white,
+                  onPressed: () {
+                    processPermission();
+                  },
+                  icon: Icon(Icons.android),
+                  label: Text('퍼미션 채크'),
+                )
+              ],
+            ),
+          )),
+        ));
   }
 }

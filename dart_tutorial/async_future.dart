@@ -21,9 +21,9 @@ Future<void> asyncProcess() async {
 
 // 넘겨진 함수를 실행한 후, 1초 대기하고 값을 반환
 Future<int> compute(Function f) {
-  int sum = f();
+  int? sum = f();
   return new Future.delayed(new Duration(seconds: 1), () {
-    return sum;
+    return sum!;
   });
 }
 

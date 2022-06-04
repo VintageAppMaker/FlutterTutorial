@@ -7,36 +7,37 @@ import 'package:http/http.dart' as http;
 
 // yaml 파일에 http를 추가하면 에러가 발생함.
 Future<List<Photo>> fetchPhotos(http.Client client) async {
-  final response =
-  await client.get(Uri.parse('https://jsonplaceholder.typicode.com/photos'));
+  final response = await client
+      .get(Uri.parse('https://jsonplaceholder.typicode.com/photos'));
 
   // compute 함수를 사용하여 parsePhotos를 별도 isolate에서 수행합니다.
-  return compute(parsePhotos, response.body);
+  return compute(
+      parsePhotos as FutureOr<List<Photo>> Function(String), response.body);
 }
 
 // 응답 결과를 List<Photo>로 변환하는 함수.
-List<Photo> parsePhotos(String responseBody) {
+List<Photo>? parsePhotos(String responseBody) {
   final parsed = json.decode(responseBody).cast<Map<String, dynamic>>();
 
   return parsed.map<Photo>((json) => Photo.fromJson(json)).toList();
 }
 
 class Photo {
-  final int albumId;
-  final int id;
-  final String title;
-  final String url;
-  final String thumbnailUrl;
+  final int? albumId;
+  final int? id;
+  final String? title;
+  final String? url;
+  final String? thumbnailUrl;
 
   Photo({this.albumId, this.id, this.title, this.url, this.thumbnailUrl});
 
   factory Photo.fromJson(Map<String, dynamic> json) {
     return Photo(
-      albumId: json['albumId'] as int,
-      id: json['id'] as int,
-      title: json['title'] as String,
-      url: json['url'] as String,
-      thumbnailUrl: json['thumbnailUrl'] as String,
+      albumId: json['albumId'] as int?,
+      id: json['id'] as int?,
+      title: json['title'] as String?,
+      url: json['url'] as String?,
+      thumbnailUrl: json['thumbnailUrl'] as String?,
     );
   }
 }
@@ -65,9 +66,9 @@ class HttpJsonExample extends StatelessWidget {
 }
 
 class PhotosList extends StatelessWidget {
-  final List<Photo> photos;
+  final List<Photo>? photos;
 
-  PhotosList({Key key, this.photos}) : super(key: key);
+  PhotosList({Key? key, this.photos}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -75,9 +76,9 @@ class PhotosList extends StatelessWidget {
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
       ),
-      itemCount: photos.length,
+      itemCount: photos!.length,
       itemBuilder: (context, index) {
-        return Image.network(photos[index].thumbnailUrl);
+        return Image.network(photos![index].thumbnailUrl!);
       },
     );
   }

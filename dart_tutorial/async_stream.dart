@@ -48,7 +48,7 @@ void periodicTest() {
     // tick 이벤트가 발생할 때 핸들러
     sum += count;
     print("count: $count => sum : $sum");
-  });
+  } as void Function(Null)?);
 }
 
 Future fromIterableTest() async {

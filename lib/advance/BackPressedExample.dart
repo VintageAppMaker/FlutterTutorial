@@ -8,7 +8,7 @@ class BackPressedExample extends StatefulWidget {
 class BackPressedStatus extends State<BackPressedExample> {
   GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
 
-  Future<bool> onBackPressedHanlder() {
+  Future<bool?> onBackPressedHanlder() {
     return showDialog(
       context: context,
       builder: (context) => new AlertDialog(
@@ -17,11 +17,11 @@ class BackPressedStatus extends State<BackPressedExample> {
         actions: <Widget>[
           new GestureDetector(
             onTap: () => Navigator.of(context).pop(false),
-            child: FlatButton(child: Text("아니오")),
+            child: FlatButton(onPressed: () {}, child: Text("아니오")),
           ),
           new GestureDetector(
             onTap: () => Navigator.of(context).pop(true),
-            child: FlatButton(child: Text("네")),
+            child: FlatButton(onPressed: () {}, child: Text("네")),
           ),
         ],
       ),
@@ -40,8 +40,7 @@ class BackPressedStatus extends State<BackPressedExample> {
           child: Text("backbutton 관리"),
         ),
       ),
-      onWillPop: onBackPressedHanlder,
+      onWillPop: onBackPressedHanlder as Future<bool> Function()?,
     );
   }
-
 }

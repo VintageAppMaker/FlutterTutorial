@@ -9,7 +9,7 @@ class RadioDropDownExample extends StatefulWidget {
 
 class _RadioDropDownState extends State<RadioDropDownExample> {
   final String sTitle = "11. Radio & DropDown 사용법";
-  bool isRegister = false;
+  bool? isRegister = false;
 
   // map형 리스트
   final _dropList = [
@@ -24,7 +24,7 @@ class _RadioDropDownState extends State<RadioDropDownExample> {
           ],
         ))
   ];
-  String _selectedSNS = "google";
+  String? _selectedSNS = "google";
 
   @override
   void initState() {
@@ -48,7 +48,7 @@ class _RadioDropDownState extends State<RadioDropDownExample> {
             title: Text("등록"),
             value: true,
             groupValue: isRegister,
-            onChanged: (value) {
+            onChanged: (dynamic value) {
               setState(() {
                 isRegister = value;
               });
@@ -58,7 +58,7 @@ class _RadioDropDownState extends State<RadioDropDownExample> {
             title: Text("미등록"),
             value: false,
             groupValue: isRegister,
-            onChanged: (value) {
+            onChanged: (dynamic value) {
               setState(() {
                 isRegister = value;
               });
@@ -67,7 +67,7 @@ class _RadioDropDownState extends State<RadioDropDownExample> {
           DropdownButton(
               value: _selectedSNS,
               items: _dropList,
-              onChanged: (value) {
+              onChanged: (dynamic value) {
                 setState(() {
                   _selectedSNS = value;
                 });

@@ -17,7 +17,7 @@ class CupertinoExample extends StatefulWidget {
 
 class _CupertinoState extends State<CupertinoExample> {
   final String sTitle = "13. Cupertino 사용법";
-  TextEditingController _textController;
+  TextEditingController? _textController;
   bool _lights = false;
   @override
   void initState() {

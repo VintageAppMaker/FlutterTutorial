@@ -68,10 +68,10 @@ class _InWidgetExampleState extends State<_InWidgetExample> {
 
 class RootState extends InheritedWidget {
   RootState({
-    Key key,
-    @required this.clear,
-    @required this.count,
-    @required Widget child, // 화면에 보여질 위젯
+    Key? key,
+    required this.clear,
+    required this.count,
+    required Widget child, // 화면에 보여질 위젯
   }) : super(key: key, child: child);
 
   // << 외부값과 연결 바인딩 >>
@@ -81,7 +81,7 @@ class RootState extends InheritedWidget {
   final int count;
 
   // 외부에서 접근할 시 사용하는 메소드
-  static RootState of(BuildContext context) {
+  static RootState? of(BuildContext context) {
     return context.dependOnInheritedWidgetOfExactType<RootState>();
   }
 
@@ -95,7 +95,7 @@ class RootState extends InheritedWidget {
 class ChildOne extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final RootState rs = RootState.of(context);
+    final RootState rs = RootState.of(context)!;
     return Center(
       child: Text(
         "${rs.count} 입니다.",
@@ -108,7 +108,7 @@ class ChildOne extends StatelessWidget {
 class ChildTwo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final RootState rs = RootState.of(context);
+    final RootState rs = RootState.of(context)!;
     return Center(
       child: Text(
         "${rs.count} 입니다.",
@@ -125,13 +125,13 @@ class ChildThree extends StatefulWidget {
 
 class ChildThreeState extends State<ChildThree> {
   Widget build(BuildContext context) {
-    final RootState rs = RootState.of(context);
+    final RootState? rs = RootState.of(context);
     return Center(
         child: OutlinedButton(
       child: Text('clear'),
       onPressed: () {
         setState(() {
-          rs.clear();
+          rs!.clear();
         });
       },
     ));

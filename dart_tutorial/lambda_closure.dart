@@ -12,9 +12,9 @@ void main(List<String> args) {
 
   // closure
   Function fnClosure(Function fn, int baseValue) {
-    var nNum = baseValue;
-    return (addNum) {
-      nNum += fn(addNum);
+    int nNum = baseValue;
+    return (int addNum) {
+      nNum += fn(addNum) as int;
       return nNum;
     };
   }

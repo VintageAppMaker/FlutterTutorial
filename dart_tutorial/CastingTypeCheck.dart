@@ -9,7 +9,7 @@
 */
 void main(List<String> args) {
   var sNum = "1";
-  var sum = int.parse(sNum) + num.parse(sNum) + double.parse("34.3");
+  num sum = int.parse(sNum) + num.parse(sNum) + double.parse("34.3");
   print(sum);
 
   var n = 0;

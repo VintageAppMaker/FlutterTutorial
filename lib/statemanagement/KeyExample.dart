@@ -31,7 +31,7 @@ class _KeyExamplePageState extends State<KetExamplePage> {
     ChildWidget(sTitle: "2번 ", key: UniqueKey()),
   ];
 
-  GlobalKey<_ChildState> _ChildState1;
+  GlobalKey<_ChildState>? _ChildState1;
   bool bFirst = true;
 
   @override
@@ -85,9 +85,9 @@ class _KeyExamplePageState extends State<KetExamplePage> {
 }
 
 class ChildWidget extends StatefulWidget {
-  String sTitle = "";
+  String? sTitle = "";
   ChildWidget({
-    Key key,
+    Key? key,
     this.sTitle
   }) : super(key: key);
 
@@ -117,14 +117,14 @@ class _ChildState extends State<ChildWidget>{
   }
   @override
   Widget build(BuildContext context) {
-    return Row(children: [Text(widget.sTitle, style: TextStyle(fontSize: 20)), Text("$myNumber", style: TextStyle(fontSize: 20, color: Colors.red) )],);
+    return Row(children: [Text(widget.sTitle!, style: TextStyle(fontSize: 20)), Text("$myNumber", style: TextStyle(fontSize: 20, color: Colors.red) )],);
   }
 }
 
 class OtherPage extends StatefulWidget {
-  GlobalKey<_ChildState> changeKey;
+  GlobalKey<_ChildState>? changeKey;
   OtherPage( this.changeKey){
-    print(this.changeKey.currentState.myNumber);
+    print(this.changeKey!.currentState!.myNumber);
   }
   @override
   _OtherPageState createState() => _OtherPageState();
@@ -139,10 +139,10 @@ class _OtherPageState extends State<OtherPage> {
             SizedBox(height: 15,),
             Text("(+) 누르면 이전페이지 값도 변경됨", style: TextStyle(color: Colors.red, fontSize: 16),),
             SizedBox(height: 15,),
-            Text("${widget.changeKey.currentState.myNumber}", style: TextStyle(color: Colors.red, fontSize: 26),),
+            Text("${widget.changeKey!.currentState!.myNumber}", style: TextStyle(color: Colors.red, fontSize: 26),),
             IconButton(icon: Icon(Icons.add), onPressed: (){
               setState(() {
-                widget.changeKey.currentState.increase();
+                widget.changeKey!.currentState!.increase();
               });
             })
           ],)

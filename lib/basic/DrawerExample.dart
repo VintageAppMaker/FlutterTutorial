@@ -62,10 +62,10 @@ class _DrawerState extends State<DrawerExample> {
                 pageSelected = 0;
               });
 
-              if (_scaffoldKey.currentState.isDrawerOpen) {
-                _scaffoldKey.currentState.openEndDrawer();
+              if (_scaffoldKey.currentState!.isDrawerOpen) {
+                _scaffoldKey.currentState!.openEndDrawer();
               } else {
-                _scaffoldKey.currentState.openDrawer();
+                _scaffoldKey.currentState!.openDrawer();
               }
             },
           ),
@@ -76,10 +76,10 @@ class _DrawerState extends State<DrawerExample> {
               setState(() {
                 pageSelected = 1;
               });
-              if (_scaffoldKey.currentState.isDrawerOpen) {
-                _scaffoldKey.currentState.openEndDrawer();
+              if (_scaffoldKey.currentState!.isDrawerOpen) {
+                _scaffoldKey.currentState!.openEndDrawer();
               } else {
-                _scaffoldKey.currentState.openDrawer();
+                _scaffoldKey.currentState!.openDrawer();
               }
             },
           )

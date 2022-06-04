@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ThemeExample extends StatefulWidget {
-  const ThemeExample({Key key}): super(key: key);
+  const ThemeExample({Key? key}): super(key: key);
   @override
   _ThemeExampleState createState() => _ThemeExampleState();
 }

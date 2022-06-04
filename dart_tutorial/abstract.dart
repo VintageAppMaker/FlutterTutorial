@@ -3,7 +3,7 @@ abstract class Animal {
     if (type == 0) return Dog();
     if (type == 1) return Cat();
 
-    return null;
+    return Dog();
   }
 
   void cry();

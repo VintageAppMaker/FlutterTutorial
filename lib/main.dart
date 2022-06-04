@@ -25,6 +25,7 @@ import 'package:flutter/services.dart';
 import 'statemanagement/ProviderExample.dart';
 
 import 'statemanagement/InheritedWidgetExample.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   runApp(MyApp());
@@ -49,8 +50,8 @@ class MyApp extends StatelessWidget {
 }
 
 class MainPage extends StatefulWidget {
-  MainPage({Key key, this.title}) : super(key: key);
-  final String title;
+  MainPage({Key? key, this.title}) : super(key: key);
+  final String? title;
 
   @override
   _MainPageState createState() => _MainPageState();
@@ -62,11 +63,19 @@ class _MainPageState extends State<MainPage> {
     return Scaffold(body: SingleChildScrollView(child: buildMain(context)));
   }
 
+  void shareUrl(String sUrl) async {
+    final Uri _url = Uri.parse(sUrl);
+    if (!await launchUrl(_url)) throw 'Could not launch $_url';
+  }
+
   Center buildMain(BuildContext context) {
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
+          buildHeaderBanner("먼저", "😀", "github", "소스와 문서", backcolor: Color(
+              0xff383838)),
+          buildGithubItem("https://github.com/VintageAppMaker/FlutterTutorial",  "repository", "예제의 소스와 문서가 있는 곳."),
           buildHeaderBanner("basic", "1", "기본위젯", "빈번하게 사용되는 위젯과 기초지식"),
           buildContentItem(
               context, "/TextExample", "1. Text 예제", "Text 사용법을 정리합니다."),
@@ -106,7 +115,7 @@ class _MainPageState extends State<MainPage> {
           buildContentItem2(context, PrefExample(), "16. Preference 예제",
               "Preference를 정리합니다."),
           buildContentItem2(
-              context, AssetReadExample(), "17. Asset 예제", "Asset 파일을 읽기."),
+             context, AssetReadExample(), "17. Asset 예제", "Asset 파일을 읽기."),
           buildContentItem2(context, HttpSimpleExample(), "18. HTTP, JSON 예제 1",
               "간단한 플러터 공식예제(pub.dev) 1"),
           buildContentItem2(context, HttpJsonExample(), "19. HTTP, JSON 예제 2",
@@ -147,6 +156,30 @@ class _MainPageState extends State<MainPage> {
               "BackPressed 기능설명")
         ],
       ),
+    );
+  }
+
+  Widget buildGithubItem(
+      String sDestination, String sTitle, String sDesc) {
+    return Column(
+      children: [
+        GestureDetector(
+          child: Container(
+            child: ListTile(
+              title: Text(sTitle),
+              subtitle: Text(
+                sDesc,
+                style: TextStyle(fontSize: 10),
+              ),
+              trailing: Icon(Icons.arrow_right),
+            ),
+          ),
+          onTap: () {
+            shareUrl(sDestination);
+          },
+        ),
+        Divider()
+      ],
     );
   }
 
@@ -200,16 +233,16 @@ class _MainPageState extends State<MainPage> {
   }
 
   Widget buildHeaderBanner(
-      String sBanner, String sNumber, String sTitle, String sSubTitle) {
+      String sBanner, String sNumber, String sTitle, String sSubTitle, {Color backcolor = Colors.red}) {
     return Banner(
       message: sBanner,
-      textStyle: TextStyle(color: Colors.red),
+      textStyle: TextStyle(color: backcolor),
       location: BannerLocation.bottomStart,
       color: Colors.white,
       child: Container(
         width: double.infinity,
         child: Card(
-          color: Colors.red,
+          color: backcolor,
           child: Padding(
               padding: EdgeInsets.all(10),
               child: Column(

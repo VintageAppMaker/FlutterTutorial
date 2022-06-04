@@ -15,7 +15,7 @@ class Counter with ChangeNotifier {
 }
 
 class ProviderExample extends StatelessWidget {
-  const ProviderExample({Key key}) : super(key: key);
+  const ProviderExample({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class ProviderExample extends StatelessWidget {
 }
 
 class RootPage extends StatelessWidget {
-  const RootPage({Key key}) : super(key: key);
+  const RootPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +58,7 @@ class RootPage extends StatelessWidget {
 }
 
 class NumberDisplay extends StatelessWidget {
-  const NumberDisplay({Key key}) : super(key: key);
+  const NumberDisplay({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

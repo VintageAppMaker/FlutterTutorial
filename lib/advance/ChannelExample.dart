@@ -23,7 +23,7 @@ class ChannelExampleState extends State<ChannelExample> {
       case "callbackString":
         var s = call.arguments;
 
-        _scaffoldKey.currentState.showSnackBar(SnackBar(
+        _scaffoldKey.currentState!.showSnackBar(SnackBar(
           content: Text(s),
           duration: Duration(seconds: 3),
         ));
@@ -84,7 +84,7 @@ class ChannelExampleState extends State<ChannelExample> {
   void doCallAPI(BuildContext ctx) async {
     var s = await platform.invokeMethod("getString");
     print(s);
-    _scaffoldKey.currentState.showSnackBar(SnackBar(
+    _scaffoldKey.currentState!.showSnackBar(SnackBar(
       content: Text(s),
       duration: Duration(seconds: 3),
     ));

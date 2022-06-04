@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class TabExample2 extends StatelessWidget {
-  const TabExample2({Key key}) : super(key: key);
+  const TabExample2({Key? key}) : super(key: key);
 
   static const tabViewes = <Center>[
     Center(child: Text("1", style: TextStyle(fontSize: 30))),
@@ -39,7 +39,7 @@ class TabExample2 extends StatelessWidget {
                 child: Text('끝으로 이동'),
                 onPressed: () {
                   final TabController controller =
-                      DefaultTabController.of(context);
+                      DefaultTabController.of(context)!;
                   if (!controller.indexIsChanging) {
                     controller.animateTo(tabViewes.length - 1);
                   }

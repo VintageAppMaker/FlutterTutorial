@@ -49,7 +49,7 @@ class RootWidgetState extends State<RootWidget> {
             children: <Widget>[
               TextFormField(
                 validator: (value) {
-                  if (value.length < 1) {
+                  if (value!.length < 1) {
                     return '값을 입력해주세요';
                   }
                   return null;
@@ -70,10 +70,10 @@ class RootWidgetState extends State<RootWidget> {
                 padding: const EdgeInsets.symmetric(vertical: 16.0),
                 child: ElevatedButton(
                   onPressed: () {
-                    if (widget._formKey.currentState.validate()) {
+                    if (widget._formKey.currentState!.validate()) {
                       // 상태저장 후, 리셋
-                      widget._formKey.currentState.save();
-                      widget._formKey.currentState.reset();
+                      widget._formKey.currentState!.save();
+                      widget._formKey.currentState!.reset();
                     }
                   },
                   child: Text('저장하기'),

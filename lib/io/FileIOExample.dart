@@ -34,14 +34,14 @@ class FileHelper {
 class FileIOExample extends StatefulWidget {
   final FileHelper storage;
 
-  FileIOExample({Key key, @required this.storage}) : super(key: key);
+  FileIOExample({Key? key, required this.storage}) : super(key: key);
 
   @override
   _FileIOExampleState createState() => _FileIOExampleState();
 }
 
 class _FileIOExampleState extends State<FileIOExample> {
-  String _str;
+  late String _str;
 
   // TextField의 컨트롤러 선언
   final editController = TextEditingController();

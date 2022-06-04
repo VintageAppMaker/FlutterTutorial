@@ -22,7 +22,7 @@ void main(List<String> args) {
   print(inlineTest("inline function"));
 
   // 3. 이름있는 파라메터 함수명 이후 ()안에 {}로 정의함.
-  void namedFunc({String name, int age}) => print("${name} ${age}");
+  void namedFunc({String? name, int? age}) => print("${name} ${age}");
   namedFunc(name: "snake", age: 52);
 
   // 4. 옵션적인 파라메터는 ()안에 []로 정의함

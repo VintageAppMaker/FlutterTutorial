@@ -1,6 +1,8 @@
 # FlutterTutorial
 
-> Flutter와 Dart 개발을 빠르게 습득하기 위한 가이드. 예제는 dart 2.12 이전버전 문법(null safety 적용안되는 버전). **vscode로 빌드 시**, 하위버전이라도 전혀 문제없음.
+> Flutter와 Dart 개발을 빠르게 습득하기 위한 가이드. 예제는 dart 2.12 이전버전 문법(null safety 적용안되는 버전)에서 시작했음.  
+> 현재는 null safety 적용하여 수정한 버전임.
+> **vscode로 빌드**하는 것을 추천함. 
 
 ![](intro.gif)
 

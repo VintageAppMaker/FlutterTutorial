@@ -52,7 +52,7 @@ void main() {
   }
 
   // 2. null 비교연산자
-  var nullVal = null;
+  dynamic nullVal = null;
   var rst = nullVal ?? 3;
   print("rst가 null이면 = ${rst}");
 }
