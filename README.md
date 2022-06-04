@@ -22,7 +22,10 @@
     - **[dart 2.12 이상부터 nullsafety 적용됨](https://dartpad.dev/323236c2909a139c59791b3deb7124f3)**
     
 - Flutter 배우기
+
+    - [설치 및 실행](flutter_tutorial/first.md)
     - [빠르게 구조파악](flutter_tutorial/start.md)
+
     - basic
       - [Text](flutter_tutorial/basic/TextExample.md)
       - [Button](flutter_tutorial/basic/ButtonExample.md)
