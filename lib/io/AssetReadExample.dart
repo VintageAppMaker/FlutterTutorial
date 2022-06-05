@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
 //import 'package:syntax_highlighter/syntax_highlighter.dart';
 import 'package:flutter_syntax_view/flutter_syntax_view.dart';
 
@@ -14,7 +15,7 @@ class _AssetReadState extends State<AssetReadExample> {
   @override
   void initState() {
     super.initState();
-    _loadString("assets/source/test.txt");
+    _loadString("lib/main.dart");
   }
 
   void _loadString(String sFile) async {
@@ -25,26 +26,22 @@ class _AssetReadState extends State<AssetReadExample> {
   }
 
   String sTitle = "17. Asset 읽기 ";
+
   @override
   Widget build(BuildContext context) {
-
     return MaterialApp(
-      title: sTitle,
-      home: Scaffold(
-          appBar: AppBar(title: Text(sTitle)),
-          body: Padding(
-            padding: EdgeInsets.all(10),
-            child: buildDartSourcellView(),
-          )
-      ),
-    );
+        title: sTitle,
+        home: Scaffold(
+            appBar: AppBar(title: Text(sTitle)),
+            body: buildDartSourcellView()
+        ));
   }
 
   Widget buildDartSourcellView() {
     return SyntaxView(
         code: _str,
         syntax: Syntax.DART,
-        syntaxTheme: SyntaxTheme.vscodeLight(),
+        syntaxTheme: SyntaxTheme.vscodeDark(),
         fontSize: 12.0,
         withZoom: true,
         withLinesCount: true,
