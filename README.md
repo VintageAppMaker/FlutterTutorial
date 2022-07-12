@@ -143,3 +143,14 @@ start ms-settings:developers
 - 범위로 선택한 코드를 함수 또는 위젯 만들기 :  ctrl + alt + m
 ~~~
 
+#### Flutter 개발환경 핫키(VSCode)
+> 위젯을 감싸고 제거하고, 함수로 만들고 할 때 유용한 키
+
+~~~
+- 위젯 감싸기 또는 제거하기, 함수, 위젯만들기 : ctrl + .
+- 들여쓰기 정리하기  : alt + shift + f
+- 리펙토링           : F2
+- 빌드타겟 선택하기 : crtl + shift + p 이후 device 입력
+~~~
+
+
