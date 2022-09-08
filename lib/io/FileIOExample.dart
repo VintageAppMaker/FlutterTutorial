@@ -84,17 +84,17 @@ class _FileIOExampleState extends State<FileIOExample> {
           TextField(onChanged: (text) {
             setDisplay(text);
           }),
-          RaisedButton(
+          ElevatedButton(
               child: Text("save"),
               onPressed: (() {
                 _writeString(_str);
               })),
-          RaisedButton(
+          ElevatedButton(
               child: Text("load"),
               onPressed: (() {
                 _loadString();
               })),
-          RaisedButton(
+          ElevatedButton(
               child: Text("back"),
               onPressed: (() {
                 Navigator.pop(context);

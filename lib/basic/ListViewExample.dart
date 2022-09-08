@@ -57,6 +57,6 @@ class ListViewExample extends StatelessWidget {
   }
 
   void showSnackBar(BuildContext ctx, String s) {
-    Scaffold.of(ctx).showSnackBar(SnackBar(content: Text(s)));
+    ScaffoldMessenger.of(ctx).showSnackBar(SnackBar(content: Text(s)));
   }
 }

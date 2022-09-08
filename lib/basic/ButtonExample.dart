@@ -21,17 +21,12 @@ class ButtonExample extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
         // Button 예제
-        RaisedButton(
-            color: Colors.red,
-            onPressed: () {/*이벤트 핸들러*/},
-            child: Text('1. RaisedButton')),
-        FlatButton(onPressed: () {/*이벤트 핸들러*/}, child: Text('2. FlatButton')),
+        ElevatedButton(
+            onPressed: () {/*이벤트 핸들러*/}, child: Text('1. RaisedButton')),
+        TextButton(onPressed: () {/*이벤트 핸들러*/}, child: Text('2. FlatButton')),
         SizedBox(
             width: double.infinity, // <-- match_parent
-            child: FlatButton(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0)),
-                color: Colors.amber,
+            child: TextButton(
                 onPressed: () {
                   Fluttertoast.showToast(msg: "안녕하세요~");
                 },

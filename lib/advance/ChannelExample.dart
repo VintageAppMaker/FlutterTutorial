@@ -8,7 +8,7 @@ class ChannelExample extends StatefulWidget {
 
 class ChannelExampleState extends State<ChannelExample> {
   var platform = MethodChannel("com.psw.dev/test");
-  String sTitle ="31. channel 테스트";
+  String sTitle = "31. channel 테스트";
 
   GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
 
@@ -23,11 +23,11 @@ class ChannelExampleState extends State<ChannelExample> {
       case "callbackString":
         var s = call.arguments;
 
-        _scaffoldKey.currentState!.showSnackBar(SnackBar(
+        ScaffoldMessenger.of(_scaffoldKey.currentContext!)
+            .showSnackBar(SnackBar(
           content: Text(s),
           duration: Duration(seconds: 3),
         ));
-        
 
         break;
       default:
@@ -51,13 +51,13 @@ class ChannelExampleState extends State<ChannelExample> {
           body: SingleChildScrollView(
             child: Padding(
               padding: const EdgeInsets.all(24.0),
-              child: Center(child: Column(
+              child: Center(
+                  child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   const Padding(padding: EdgeInsets.only(top: 22.0)),
                   buildSnackBarBuilder(),
                   const Padding(padding: EdgeInsets.only(top: 12.0)),
-
                 ],
               )),
             ),
@@ -71,7 +71,7 @@ class ChannelExampleState extends State<ChannelExample> {
       return FloatingActionButton.extended(
         backgroundColor: Colors.red,
         foregroundColor: Colors.white,
-        onPressed: ()  {
+        onPressed: () {
           doCallAPI(context);
         },
         icon: Icon(Icons.android),
@@ -80,16 +80,14 @@ class ChannelExampleState extends State<ChannelExample> {
     });
   }
 
-
   void doCallAPI(BuildContext ctx) async {
     var s = await platform.invokeMethod("getString");
     print(s);
-    _scaffoldKey.currentState!.showSnackBar(SnackBar(
+    ScaffoldMessenger.of(_scaffoldKey.currentContext!).showSnackBar(SnackBar(
       content: Text(s),
       duration: Duration(seconds: 3),
     ));
 
     await platform.invokeMethod("startCallback");
   }
-
 }

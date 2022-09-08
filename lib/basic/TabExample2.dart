@@ -35,7 +35,7 @@ class TabExample2 extends StatelessWidget {
               Expanded(
                 child: TabBarView(children: tabViewes),
               ),
-              RaisedButton(
+              TextButton(
                 child: Text('끝으로 이동'),
                 onPressed: () {
                   final TabController controller =

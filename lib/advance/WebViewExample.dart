@@ -27,7 +27,7 @@ class WebViewExample extends StatefulWidget {
 
 class _WebViewExampleState extends State<WebViewExample> {
   final Completer<WebViewController> _controller =
-  Completer<WebViewController>();
+      Completer<WebViewController>();
 
   @override
   void initState() {
@@ -87,7 +87,7 @@ class _WebViewExampleState extends State<WebViewExample> {
         name: 'Toaster',
         onMessageReceived: (JavascriptMessage message) {
           // ignore: deprecated_member_use
-          Scaffold.of(context).showSnackBar(
+          ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(content: Text(message.message)),
           );
         });
@@ -103,7 +103,7 @@ class _WebViewExampleState extends State<WebViewExample> {
               onPressed: () async {
                 final String? url = (await controller.data!.currentUrl());
                 // ignore: deprecated_member_use
-                Scaffold.of(context).showSnackBar(
+                ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(content: Text('Favorited $url')),
                 );
               },
@@ -210,9 +210,9 @@ class SampleMenu extends StatelessWidget {
   void _onListCookies(
       WebViewController controller, BuildContext context) async {
     final String cookies =
-    await controller.evaluateJavascript('document.cookie');
+        await controller.evaluateJavascript('document.cookie');
     // ignore: deprecated_member_use
-    Scaffold.of(context).showSnackBar(SnackBar(
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
       content: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         mainAxisSize: MainAxisSize.min,
@@ -228,7 +228,7 @@ class SampleMenu extends StatelessWidget {
     await controller.evaluateJavascript(
         'caches.open("test_caches_entry"); localStorage["test_localStorage"] = "dummy_entry";');
     // ignore: deprecated_member_use
-    Scaffold.of(context).showSnackBar(const SnackBar(
+    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
       content: Text('Added a test entry to cache.'),
     ));
   }
@@ -242,7 +242,7 @@ class SampleMenu extends StatelessWidget {
   void _onClearCache(WebViewController controller, BuildContext context) async {
     await controller.clearCache();
     // ignore: deprecated_member_use
-    Scaffold.of(context).showSnackBar(const SnackBar(
+    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
       content: Text("Cache cleared."),
     ));
   }
@@ -254,7 +254,7 @@ class SampleMenu extends StatelessWidget {
       message = 'There are no cookies.';
     }
     // ignore: deprecated_member_use
-    Scaffold.of(context).showSnackBar(SnackBar(
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
       content: Text(message),
     ));
   }
@@ -262,7 +262,7 @@ class SampleMenu extends StatelessWidget {
   void _onNavigationDelegateExample(
       WebViewController controller, BuildContext context) async {
     final String contentBase64 =
-    base64Encode(const Utf8Encoder().convert(kNavigationExamplePage));
+        base64Encode(const Utf8Encoder().convert(kNavigationExamplePage));
     await controller.loadUrl('data:text/html;base64,$contentBase64');
   }
 
@@ -272,7 +272,7 @@ class SampleMenu extends StatelessWidget {
     }
     final List<String> cookieList = cookies.split(';');
     final Iterable<Text> cookieWidgets =
-    cookieList.map((String cookie) => Text(cookie));
+        cookieList.map((String cookie) => Text(cookie));
     return Column(
       mainAxisAlignment: MainAxisAlignment.end,
       mainAxisSize: MainAxisSize.min,
@@ -303,41 +303,41 @@ class NavigationControls extends StatelessWidget {
               onPressed: !webViewReady
                   ? null
                   : () async {
-                if (await controller!.canGoBack()) {
-                  await controller.goBack();
-                } else {
-                  // ignore: deprecated_member_use
-                  Scaffold.of(context).showSnackBar(
-                    const SnackBar(content: Text("No back history item")),
-                  );
-                  return;
-                }
-              },
+                      if (await controller!.canGoBack()) {
+                        await controller.goBack();
+                      } else {
+                        // ignore: deprecated_member_use
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(content: Text("No back history item")),
+                        );
+                        return;
+                      }
+                    },
             ),
             IconButton(
               icon: const Icon(Icons.arrow_forward_ios),
               onPressed: !webViewReady
                   ? null
                   : () async {
-                if (await controller!.canGoForward()) {
-                  await controller.goForward();
-                } else {
-                  // ignore: deprecated_member_use
-                  Scaffold.of(context).showSnackBar(
-                    const SnackBar(
-                        content: Text("No forward history item")),
-                  );
-                  return;
-                }
-              },
+                      if (await controller!.canGoForward()) {
+                        await controller.goForward();
+                      } else {
+                        // ignore: deprecated_member_use
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                              content: Text("No forward history item")),
+                        );
+                        return;
+                      }
+                    },
             ),
             IconButton(
               icon: const Icon(Icons.replay),
               onPressed: !webViewReady
                   ? null
                   : () {
-                controller!.reload();
-              },
+                      controller!.reload();
+                    },
             ),
           ],
         );

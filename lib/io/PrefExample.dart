@@ -47,7 +47,7 @@ class _FileIOExampleState extends State<PrefExample> {
               });
             });
           }),
-          RaisedButton(
+          ElevatedButton(
               child: Text("load"),
               onPressed: (() {
                 _loadString();

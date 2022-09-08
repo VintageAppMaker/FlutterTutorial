@@ -25,7 +25,7 @@ class DialogSnackBarExample extends StatelessWidget {
   Widget buildFlatButton() {
     // Context를 얻기위해 Builder로 감싼다.
     return Builder(builder: (BuildContext context) {
-      return FlatButton(
+      return TextButton(
           onPressed: () {
             showAlertDialog(context);
           },
@@ -36,7 +36,7 @@ class DialogSnackBarExample extends StatelessWidget {
   Builder buildSnackBarBuilder() {
     // Context를 얻기위해 Builder로 감싼다.
     return Builder(builder: (BuildContext context) {
-      return FlatButton(
+      return TextButton(
           onPressed: () {
             showSnackBar(context, "Hi");
           },
@@ -45,7 +45,7 @@ class DialogSnackBarExample extends StatelessWidget {
   }
 
   void showSnackBar(BuildContext ctx, String s) {
-    Scaffold.of(ctx).showSnackBar(SnackBar(content: Text(s)));
+    ScaffoldMessenger.of(ctx).showSnackBar(SnackBar(content: Text(s)));
   }
 
   void showAlertDialog(BuildContext context) {
@@ -59,7 +59,7 @@ class DialogSnackBarExample extends StatelessWidget {
           title: new Text("타이틀"),
           content: Text("본문"),
           actions: <Widget>[
-            new FlatButton(
+            new TextButton(
               child: new Text("Close"),
               onPressed: () {
                 Navigator.pop(context);
