@@ -22,8 +22,8 @@ class _ThemeExampleState extends State {
       home: Scaffold(
         appBar: AppBar(
           title: Text(sTitle),
-          backgroundColor: Theme.of(context).appBarTheme.color,
-          textTheme: Theme.of(context).textTheme,
+          backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
+          //textTheme: Theme.of(context).textTheme,
         ),
         body: Center(
           child: Column(

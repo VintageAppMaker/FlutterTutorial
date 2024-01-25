@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // 전체화면 만들기
-    SystemChrome.setEnabledSystemUIOverlays([]);
+    //SystemChrome.setEnabledSystemUIOverlays([]);
     return MaterialApp(
       scrollBehavior: DeskScrollBehavior(),
       debugShowCheckedModeBanner: false,
@@ -73,9 +73,10 @@ class _MainPageState extends State<MainPage> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          buildHeaderBanner("먼저", "😀", "github", "소스와 문서", backcolor: Color(
-              0xff383838)),
-          buildGithubItem("https://github.com/VintageAppMaker/FlutterTutorial",  "repository", "예제의 소스와 문서가 있는 곳."),
+          buildHeaderBanner("먼저", "😀", "github", "소스와 문서",
+              backcolor: Color(0xff383838)),
+          buildGithubItem("https://github.com/VintageAppMaker/FlutterTutorial",
+              "repository", "예제의 소스와 문서가 있는 곳."),
           buildHeaderBanner("basic", "1", "기본위젯", "빈번하게 사용되는 위젯과 기초지식"),
           buildContentItem(
               context, "/TextExample", "1. Text 예제", "Text 사용법을 정리합니다."),
@@ -115,7 +116,7 @@ class _MainPageState extends State<MainPage> {
           buildContentItem2(context, PrefExample(), "16. Preference 예제",
               "Preference를 정리합니다."),
           buildContentItem2(
-             context, AssetReadExample(), "17. Asset 예제", "Asset 파일을 읽기."),
+              context, AssetReadExample(), "17. Asset 예제", "Asset 파일을 읽기."),
           buildContentItem2(context, HttpSimpleExample(), "18. HTTP, JSON 예제 1",
               "간단한 플러터 공식예제(pub.dev) 1"),
           buildContentItem2(context, HttpJsonExample(), "19. HTTP, JSON 예제 2",
@@ -159,8 +160,7 @@ class _MainPageState extends State<MainPage> {
     );
   }
 
-  Widget buildGithubItem(
-      String sDestination, String sTitle, String sDesc) {
+  Widget buildGithubItem(String sDestination, String sTitle, String sDesc) {
     return Column(
       children: [
         GestureDetector(
@@ -233,7 +233,8 @@ class _MainPageState extends State<MainPage> {
   }
 
   Widget buildHeaderBanner(
-      String sBanner, String sNumber, String sTitle, String sSubTitle, {Color backcolor = Colors.red}) {
+      String sBanner, String sNumber, String sTitle, String sSubTitle,
+      {Color backcolor = Colors.red}) {
     return Banner(
       message: sBanner,
       textStyle: TextStyle(color: backcolor),
